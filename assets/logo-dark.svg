@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" fill="none" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Rehan Travel Agency dark logo</title>
+  <g transform="translate(18 22) scale(0.94)">
+    
+  <title id="markTitle">Rehan Travel Agency dark mark</title>
+  <circle cx="146" cy="144" r="78" stroke="#FFFFFF" stroke-width="12"/>
+  <path d="M146 66C114 92 114 196 146 222" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M146 66C178 92 178 196 146 222" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M74 127C110 117 182 117 218 127" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M74 161C110 173 182 173 218 161" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M86 107C116 101 176 101 206 107" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M86 181C116 189 176 189 206 181" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M38 182C94 206 126 200 152 186" stroke="#FF8C00" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+  <path d="M48 190L112 176L212 96L232 114L182 188L242 200L264 224L172 214L150 278L124 286L130 218L82 222Z" fill="#FF8C00"/>
+  <path d="M236 202C209 202 188 223 188 250C188 293 236 330 236 330C236 330 284 293 284 250C284 223 263 202 236 202Z" fill="#FF8C00"/>
+  <circle cx="236" cy="250" r="22" fill="#FFFFFF"/>
+
+  </g>
+  <text x="350" y="178" fill="#FFFFFF" font-family="Palatino Linotype, Georgia, serif" font-size="96" font-weight="700" letter-spacing=".5">Rehan</text>
+  <rect x="352" y="198" width="88" height="8" rx="4" fill="#FF8C00"/>
+  <text x="352" y="270" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="8">TRAVEL AGENCY</text>
+</svg>

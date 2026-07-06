@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" fill="none" role="img" aria-labelledby="markTitle">
+  <title id="markTitle">Rehan Travel Agency logo mark</title>
+  <circle cx="146" cy="144" r="78" stroke="#0F4C81" stroke-width="12"/>
+  <path d="M146 66C114 92 114 196 146 222" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M146 66C178 92 178 196 146 222" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M74 127C110 117 182 117 218 127" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M74 161C110 173 182 173 218 161" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M86 107C116 101 176 101 206 107" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M86 181C116 189 176 189 206 181" stroke="#0F4C81" stroke-width="12" stroke-linecap="round"/>
+  <path d="M38 182C94 206 126 200 152 186" stroke="#FF8C00" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+  <path d="M48 190L112 176L212 96L232 114L182 188L242 200L264 224L172 214L150 278L124 286L130 218L82 222Z" fill="#FF8C00"/>
+  <path d="M236 202C209 202 188 223 188 250C188 293 236 330 236 330C236 330 284 293 284 250C284 223 263 202 236 202Z" fill="#FF8C00"/>
+  <circle cx="236" cy="250" r="22" fill="#FFFFFF"/>
+</svg>

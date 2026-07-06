@@ -1,0 +1,26 @@
+{
+  "name": "Rehan Travel Agency",
+  "short_name": "RTA",
+  "description": "Your Journey, Our Responsibility",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0F4C81",
+  "icons": [
+    {
+      "src": "assets/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

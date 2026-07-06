@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">Rehan Travel Agency favicon</title>
+  <rect width="512" height="512" rx="116" fill="#0F4C81"/>
+  <path d="M104 164C154 206 208 214 260 196" stroke="rgba(255,255,255,.3)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M266 128L366 98L444 154L358 180L430 244L404 270L324 216L276 316L238 324L258 226L184 234L156 206L258 194Z" fill="#FF8C00"/>
+  <text x="86" y="370" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="136" font-weight="700" letter-spacing="8">RTA</text>
+</svg>
