@@ -70,6 +70,7 @@ a {
 
 .site-header,
 .section,
+.photo-showcase,
 .site-footer,
 .trust-band {
   position: relative;
@@ -91,6 +92,7 @@ a {
 .nav-row,
 .hero,
 .section,
+.photo-showcase,
 .site-footer,
 .trust-band {
   width: min(var(--max-width), calc(100% - 2rem));
@@ -202,7 +204,6 @@ a {
 
 .hero-copy h1,
 .section-heading h2,
-.promise-copy h2,
 .contact-copy h2 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
@@ -234,13 +235,9 @@ a {
 
 .hero-subtitle,
 .section-heading p,
-.promise-copy p,
 .contact-copy p,
 .service-card p,
-.journey-card p,
-.promise-card p,
-.trust-band p,
-.floating-card p {
+.trust-band p {
   color: var(--muted);
   line-height: 1.75;
 }
@@ -375,114 +372,86 @@ a {
   color: var(--primary-deep);
 }
 
-.hero-visual {
-  position: relative;
-}
-
-.visual-panel {
+.hero-photo-stage {
   position: relative;
   min-height: 560px;
-  border-radius: 36px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.64)),
-    linear-gradient(145deg, rgba(15, 76, 129, 0.12), rgba(255, 140, 0, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
   box-shadow: var(--shadow-soft);
+  background: var(--primary-deep);
 }
 
-.visual-panel::before {
+.hero-photo-stage::before {
   content: "";
   position: absolute;
-  inset: 1.2rem;
-  border-radius: 28px;
-  border: 1px dashed rgba(15, 76, 129, 0.14);
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 45%, rgba(10, 54, 91, 0.82));
+  pointer-events: none;
 }
 
-.orbit {
-  position: absolute;
-  inset: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(15, 76, 129, 0.12);
-}
-
-.orbit-one {
-  width: 420px;
-  height: 420px;
-}
-
-.orbit-two {
-  width: 280px;
-  height: 280px;
-  border-style: dashed;
-}
-
-.brand-orb {
-  position: absolute;
-  inset: 50%;
-  width: 220px;
-  height: 220px;
-  transform: translate(-50%, -50%);
-  padding: 1.4rem;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.68)),
-    linear-gradient(180deg, rgba(15, 76, 129, 0.08), rgba(15, 76, 129, 0.01));
-  box-shadow: 0 28px 45px rgba(15, 76, 129, 0.12);
-}
-
-.brand-orb img {
+.hero-main-photo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  min-height: 560px;
+  object-fit: cover;
 }
 
-.route-chip {
+.hero-mini-photos {
   position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: grid;
+  gap: 0.75rem;
+  width: 36%;
 }
 
-.chip-one {
-  top: 6.5rem;
-  left: 2.2rem;
+.hero-mini-photos img {
+  width: 100%;
+  aspect-ratio: 1.25;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 16px 30px rgba(10, 54, 91, 0.22);
 }
 
-.chip-two {
-  top: 8.5rem;
-  right: 2.4rem;
-}
-
-.chip-three {
-  bottom: 7rem;
-  left: 5rem;
-}
-
-.floating-card {
+.photo-caption {
   position: absolute;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(15, 76, 129, 0.1);
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem;
   border-radius: 22px;
-  padding: 1.2rem 1.25rem;
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(16px);
+  color: var(--accent);
+  background: rgba(10, 54, 91, 0.72);
+  backdrop-filter: blur(14px);
 }
 
-.card-main {
-  right: 2rem;
-  bottom: 2rem;
-  max-width: 270px;
+.photo-caption img {
+  width: 58px;
+  height: 58px;
+  padding: 0.35rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
 }
 
-.card-side {
-  left: 2rem;
-  bottom: 6rem;
-  max-width: 200px;
-}
-
-.floating-card strong {
+.photo-caption span {
   display: block;
-  font-size: 1.15rem;
-  margin: 0.6rem 0 0.2rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-caption strong {
+  display: block;
+  margin-top: 0.25rem;
 }
 
 .trust-band {
@@ -513,31 +482,90 @@ a {
   padding: 5.4rem 0 1rem;
 }
 
+.photo-showcase {
+  padding: 4.8rem 0 1rem;
+}
+
 .section-heading {
   max-width: 44rem;
   margin-bottom: 2rem;
 }
 
 .section-heading h2,
-.promise-copy h2,
 .contact-copy h2 {
   font-size: clamp(2.6rem, 5vw, 4rem);
   margin: 0.8rem 0 1rem;
 }
 
-.service-grid,
-.journey-grid {
+.service-grid {
   display: grid;
   gap: 1.1rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  border-radius: 24px;
+  background: var(--primary-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(5, 28, 49, 0.86));
+}
+
+.photo-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.06);
+}
+
+.photo-card div {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  color: var(--accent);
+}
+
+.photo-card span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-card strong {
+  display: block;
+  line-height: 1.35;
 }
 
 .service-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.service-card,
-.journey-card,
-.promise-card {
+.service-card {
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
@@ -549,64 +577,47 @@ a {
   min-height: 220px;
 }
 
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.service-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 18px;
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 14px 24px rgba(15, 76, 129, 0.14);
+}
+
+.service-symbol svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: currentColor;
+}
+
 .service-index {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 3rem;
   min-height: 3rem;
-  margin-bottom: 1.2rem;
   border-radius: 1rem;
   background: rgba(15, 76, 129, 0.08);
   color: var(--primary);
   font-weight: 800;
 }
 
-.service-card h3,
-.journey-card h3,
-.promise-card h3 {
+.service-card h3 {
   margin: 0 0 0.8rem;
   font-size: 1.26rem;
-}
-
-.journey-section {
-  padding-top: 4.2rem;
-}
-
-.journey-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.journey-card {
-  min-height: 250px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.88)),
-    linear-gradient(180deg, rgba(15, 76, 129, 0.08), transparent);
-}
-
-.journey-card span {
-  color: var(--secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 800;
-  font-size: 0.82rem;
-}
-
-.promise-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 1.4rem;
-  align-items: start;
-}
-
-.promise-points {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.promise-card {
-  min-height: 190px;
 }
 
 .contact-section {
@@ -713,29 +724,25 @@ a {
   transform: translateY(0);
 }
 
-.service-card:hover,
-.journey-card:hover,
-.promise-card:hover,
-.floating-card:hover {
+.service-card:hover {
   transform: translateY(-4px);
   transition: transform 180ms ease;
 }
 
 @media (max-width: 980px) {
   .hero,
-  .promise-layout,
   .contact-panel {
     grid-template-columns: 1fr;
   }
 
   .service-grid,
-  .journey-grid,
-  .promise-points,
+  .photo-grid,
   .trust-band {
     grid-template-columns: 1fr 1fr;
   }
 
-  .visual-panel {
+  .hero-photo-stage,
+  .hero-main-photo {
     min-height: 500px;
   }
 }
@@ -748,6 +755,7 @@ a {
   .topbar,
   .hero,
   .section,
+  .photo-showcase,
   .trust-band {
     width: min(var(--max-width), calc(100% - 1rem));
   }
@@ -800,8 +808,7 @@ a {
   }
 
   .service-grid,
-  .journey-grid,
-  .promise-points,
+  .photo-grid,
   .trust-band {
     grid-template-columns: 1fr;
   }
@@ -814,49 +821,16 @@ a {
     width: min(var(--max-width), calc(100% - 1rem));
   }
 
-  .visual-panel {
+  .hero-photo-stage,
+  .hero-main-photo {
     min-height: 420px;
   }
 
-  .orbit-one {
-    width: 320px;
-    height: 320px;
+  .hero-mini-photos {
+    width: 42%;
   }
 
-  .orbit-two {
-    width: 220px;
-    height: 220px;
-  }
-
-  .brand-orb {
-    width: 170px;
-    height: 170px;
-  }
-
-  .card-side {
-    left: 1rem;
-    bottom: 1rem;
-    max-width: 170px;
-  }
-
-  .card-main {
-    right: 1rem;
-    bottom: 1rem;
-    max-width: 220px;
-  }
-
-  .chip-one {
-    top: 1.3rem;
-    left: 1rem;
-  }
-
-  .chip-two {
-    top: 1.7rem;
-    right: 1rem;
-  }
-
-  .chip-three {
-    bottom: 6rem;
-    left: 1rem;
+  .photo-card {
+    min-height: 300px;
   }
 }
