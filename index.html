@@ -3,392 +3,275 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rehan Travel Agency</title>
+    <title>Rehan Travel Agency | Flights, Trains, Buses, Hotels & Holidays</title>
     <meta
       name="description"
-      content="Your Journey, Our Responsibility. Book flights, hotels, holiday packages, bus tickets and train tickets at the best prices."
+      content="Request flight, train, bus, hotel and holiday bookings with personal support from Rehan Travel Agency."
     />
-    <link rel="canonical" href="https://www.rehantravelagency.com/" />
-    <meta name="theme-color" content="#0F4C81" />
+    <meta name="theme-color" content="#082d4a" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
-    <div class="site-shell">
-      <header class="site-header" id="top">
-        <div class="topbar">
-          <p>Owner: Rehan Ali</p>
-          <a href="tel:+918178054327">Call: +91 81780 54327</a>
+    <a class="skip-link" href="#booking">Skip to booking form</a>
+    <header class="site-header" id="top">
+      <div class="nav-wrap">
+        <a class="brand" href="#top" aria-label="Rehan Travel Agency home">
+          <img src="assets/rehan-travel-agency-logo.png" alt="Rehan Travel Agency" />
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#booking">Plan a trip <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-content shell">
+          <p class="eyebrow"><span></span> Your journey, our responsibility</p>
+          <h1 id="hero-title">Travel made <em>personal.</em></h1>
+          <p class="hero-intro">
+            Flights, trains, buses, hotels and holiday trips — thoughtfully arranged by a real person who keeps your journey on track.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#booking">Start booking <span aria-hidden="true">↓</span></a>
+            <a class="call-link" href="tel:+918178054327">
+              <span class="call-icon" aria-hidden="true">☎</span>
+              <span><small>Need help now?</small>+91 81780 54327</span>
+            </a>
+          </div>
         </div>
-        <div class="nav-row">
-          <a class="brand" href="#top" aria-label="Rehan Travel Agency home">
-            <img src="assets/logo-light.svg" alt="Rehan Travel Agency" />
-          </a>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-            Menu
-          </button>
-          <nav class="site-nav" id="site-nav">
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
-            <a
-              class="nav-cta"
-              href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20want%20to%20book%20a%20trip."
-              target="_blank"
-              rel="noreferrer"
-              >Book Now</a
-            >
-          </nav>
+        <div class="hero-location shell" aria-label="Featured destination">
+          <span class="location-dot"></span>
+          <div><small>Featured escape</small><strong>Kashmir, India</strong></div>
+          <span class="location-line"></span>
+          <span class="location-caption">Travel beautifully, arrive confidently.</span>
         </div>
-      </header>
+      </section>
 
-      <main>
-        <section class="hero">
-          <div class="hero-copy reveal">
-            <span class="eyebrow">Your Journey, Our Responsibility</span>
-            <h1>Explore the World with Rehan Travel Agency</h1>
-            <p class="hero-subtitle">
-              Book Flights, Hotels, Holiday Packages, Bus &amp; Train Tickets at the Best Prices.
-            </p>
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20want%20to%20book%20a%20trip."
-                target="_blank"
-                rel="noreferrer"
-                >Book Now</a
-              >
-              <a class="button button-secondary" href="#gallery">Explore Packages</a>
-              <a class="button button-ghost" href="tel:+918178054327">Contact Us</a>
-              <a
-                class="button button-success"
-                href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20need%20travel%20assistance."
-                target="_blank"
-                rel="noreferrer"
-                >WhatsApp Us</a
-              >
-            </div>
-            <div class="quick-contact reveal">
-              <a href="tel:+918178054327">
-                <span class="icon-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path
-                      d="M6.6 10.8c1.8 3.6 3 4.8 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C10.1 22.3 1.7 13.9 1.7 3.3 1.7 2.6 2.3 2 3 2h4.3c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z"
-                    />
-                  </svg>
-                </span>
-                <span>+91 81780 54327</span>
-              </a>
-              <a href="mailto:rehanthehero009@gmail.com">
-                <span class="icon-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path
-                      d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2.5 6.8 5 6.8-5H5.2Zm13.8 1.3-6.2 4.6a1.4 1.4 0 0 1-1.6 0L5 7.3v11.2c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5V7.3Z"
-                    />
-                  </svg>
-                </span>
-                <span>rehanthehero009@gmail.com</span>
-              </a>
-            </div>
-            <div class="service-pill-row">
-              <span>Flights</span>
-              <span>Hotels</span>
-              <span>Holiday Packages</span>
-              <span>Bus &amp; Train Tickets</span>
-            </div>
+      <section class="booking-section shell" id="booking" aria-labelledby="booking-title">
+        <div class="booking-card">
+          <div class="booking-heading">
+            <p class="section-kicker">TRIP REQUEST</p>
+            <h2 id="booking-title">Where can we take you?</h2>
           </div>
-
-          <div class="hero-photo-stage reveal" aria-label="Travel photo highlights">
-            <img
-              class="hero-main-photo"
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1100&q=80"
-              alt="Sunny beach destination for holiday packages"
-            />
-            <div class="hero-mini-photos">
-              <img
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80"
-                alt="Airplane wing above clouds"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=700&q=80"
-                alt="Train travelling through mountains"
-              />
-            </div>
-            <div class="photo-caption">
-              <img src="assets/logo-mark.svg" alt="" />
-              <div>
-                <span>Live Booking Support</span>
-                <strong>Flights, Hotels, Bus &amp; Train Tickets</strong>
-              </div>
-            </div>
+          <div class="booking-tabs" role="tablist" aria-label="Choose a booking service">
+            <button class="booking-tab is-active" type="button" role="tab" aria-selected="true" data-service="flight">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 13 18-10-6 18-4-7-8-1Zm8.8-1.4 2.1 3.6 2.1-6.5-4.2 2.9Z" /></svg> Flight
+            </button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="train">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3l2 3h-3l-1.3-2H9.3L8 22H5l2-3a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 3v5h10V6H7Zm1 10a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 8 16Zm8 0a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 16 16Z" /></svg> Train
+            </button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="bus">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a3 3 0 0 1 3 3v12a2 2 0 0 1-2 2h-1a3 3 0 0 1-6 0h-1a3 3 0 0 1-6 0H4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3Zm0 3v6h12V6H6Zm1 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" /></svg> Bus
+            </button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="hotel">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11V5h3v6h15a2 2 0 0 1 2 2v6h-2v-3H3v3H1V5h2v6Zm5-4h5a3 3 0 0 1 3 3v1H8V7Z" /></svg> Hotel
+            </button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="holiday">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3V3Zm2 2h2V5h-2v2H6v12h12V7h-5v2h-2V7Z" /></svg> Holidays
+            </button>
           </div>
-        </section>
-
-        <section class="trust-band reveal">
-          <div>
-            <strong>One trusted agency</strong>
-            <p>From first quote to final boarding pass.</p>
-          </div>
-          <div>
-            <strong>Flexible travel services</strong>
-            <p>Domestic trips, international journeys, family holidays, and business travel.</p>
-          </div>
-          <div>
-            <strong>Clear support</strong>
-            <p>Route planning, ticket guidance, and careful coordination under one roof.</p>
-          </div>
-        </section>
-
-        <section class="photo-showcase" id="gallery">
-          <div class="section-heading reveal">
-            <span class="section-tag">Travel Gallery</span>
-            <h2>Real travel visuals for every booking service.</h2>
-            <p>
-              Browse the main services with destination-style photos, clear symbols, and direct booking
-              support from Rehan Travel Agency.
-            </p>
-          </div>
-          <div class="photo-grid">
-            <article class="photo-card reveal">
-              <img
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80"
-                alt="Flight view from an airplane"
-              />
-              <div>
-                <span>Flight Booking</span>
-                <strong>Best routes for domestic and international trips.</strong>
-              </div>
-            </article>
-            <article class="photo-card reveal">
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
-                alt="Luxury hotel swimming pool"
-              />
-              <div>
-                <span>Hotels &amp; Holidays</span>
-                <strong>Comfortable stays and package planning.</strong>
-              </div>
-            </article>
-            <article class="photo-card reveal">
-              <img
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80"
-                alt="Bus travelling on a road"
-              />
-              <div>
-                <span>Bus Tickets</span>
-                <strong>Intercity travel options with clear timing.</strong>
-              </div>
-            </article>
-            <article class="photo-card reveal">
-              <img
-                src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=80"
-                alt="Train route through a scenic landscape"
-              />
-              <div>
-                <span>Train Tickets</span>
-                <strong>Rail bookings for easy, dependable journeys.</strong>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="services">
-          <div class="section-heading reveal">
-            <span class="section-tag">Services</span>
-            <h2>Complete travel support, tailored to how you move.</h2>
-            <p>
-              Rehan Travel Agency combines practical booking help with polished trip planning so every
-              journey feels easier from the start.
-            </p>
-          </div>
-          <div class="service-grid">
-            <article class="service-card reveal">
-              <div class="service-card-top">
-                <span class="service-symbol" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path d="M3 13.5 21 3l-6 18-4-7-8-0.5Zm8.8-1.7 2 3.5 2.2-6.6-4.2 3.1Z" />
-                  </svg>
-                </span>
-                <span class="service-index">01</span>
-              </div>
-              <h3>Flight Booking</h3>
-              <p>Domestic and international flight options aligned with timing, comfort, and value.</p>
-            </article>
-            <article class="service-card reveal">
-              <div class="service-card-top">
-                <span class="service-symbol" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path d="M3 11V5h3v6h15a2 2 0 0 1 2 2v6h-2v-3H3v3H1V5h2v6Zm5-4h5a3 3 0 0 1 3 3v1H8V7Z" />
-                  </svg>
-                </span>
-                <span class="service-index">02</span>
-              </div>
-              <h3>Hotel Reservations</h3>
-              <p>Comfortable stays chosen around location, budget, and travel style.</p>
-            </article>
-            <article class="service-card reveal">
-              <div class="service-card-top">
-                <span class="service-symbol" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path d="M9 4h6l1 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1-3Zm2 2-.4 1h2.8L13 6h-2Zm1 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
-                  </svg>
-                </span>
-                <span class="service-index">03</span>
-              </div>
-              <h3>Holiday Packages</h3>
-              <p>Curated itineraries for families, couples, groups, and memorable seasonal escapes.</p>
-            </article>
-            <article class="service-card reveal">
-              <div class="service-card-top">
-                <span class="service-symbol" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path d="M5 4h13a4 4 0 0 1 4 4v8a2 2 0 0 1-2 2h-1a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2V7a3 3 0 0 1 3-3Zm0 3v4h6V7H5Zm8 0v4h6V8a1 1 0 0 0-1-1h-5ZM6 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
-                  </svg>
-                </span>
-                <span class="service-index">04</span>
-              </div>
-              <h3>Bus Tickets</h3>
-              <p>Smart intercity options for practical, budget-conscious travel with dependable timing.</p>
-            </article>
-            <article class="service-card reveal">
-              <div class="service-card-top">
-                <span class="service-symbol" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" role="img" focusable="false">
-                    <path d="M7 3h10a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3l2 3h-3l-1.3-2h-5.4L8 21H5l2-3a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 3v4h10V6H7Zm1 9a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 8 15Zm8 0a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 16 15Z" />
-                  </svg>
-                </span>
-                <span class="service-index">05</span>
-              </div>
-              <h3>Train Tickets</h3>
-              <p>Rail bookings managed with attention to route convenience and seat availability.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-          <div class="contact-panel reveal">
-            <div class="contact-copy">
-              <span class="section-tag">Contact</span>
-              <h2>Start your next journey with Rehan Travel Agency.</h2>
-              <p>
-                Share your destination, travel dates, and preferred budget, and the agency can shape a plan
-                around your needs.
-              </p>
-              <div class="contact-actions">
-                <a
-                  class="button button-primary"
-                  href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20want%20to%20book%20a%20trip."
-                  target="_blank"
-                  rel="noreferrer"
-                  >Book Now</a
-                >
-                <a class="button button-ghost-light" href="tel:+918178054327">Call Now</a>
-                <a
-                  class="button button-success"
-                  href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20need%20travel%20assistance."
-                  target="_blank"
-                  rel="noreferrer"
-                  >WhatsApp Us</a
-                >
-              </div>
-            </div>
-            <div class="contact-details">
-              <div>
-                <span>Agency Name</span>
-                <strong>Rehan Travel Agency</strong>
-              </div>
-              <div>
-                <span>Owner</span>
-                <strong>Rehan Ali</strong>
-              </div>
-              <div>
-                <span>Business Type</span>
-                <strong>Travel Agency</strong>
-              </div>
-              <div>
-                <span>Website</span>
-                <strong>www.rehantravelagency.com</strong>
-              </div>
-              <div class="contact-link-card">
-                <span>Phone &amp; WhatsApp</span>
-                <a href="tel:+918178054327">
-                  <span class="icon-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="img" focusable="false">
-                      <path
-                        d="M6.6 10.8c1.8 3.6 3 4.8 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C10.1 22.3 1.7 13.9 1.7 3.3 1.7 2.6 2.3 2 3 2h4.3c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.2 2.2Z"
-                      />
-                    </svg>
-                  </span>
-                  +91 81780 54327
-                </a>
-              </div>
-              <div class="contact-link-card">
-                <span>Email</span>
-                <a href="mailto:rehanthehero009@gmail.com">
-                  <span class="icon-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="img" focusable="false">
-                      <path
-                        d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2.5 6.8 5 6.8-5H5.2Zm13.8 1.3-6.2 4.6a1.4 1.4 0 0 1-1.6 0L5 7.3v11.2c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5V7.3Z"
-                      />
-                    </svg>
-                  </span>
-                  rehanthehero009@gmail.com
-                </a>
-              </div>
-              <div class="contact-link-card">
-                <span>Instagram</span>
-                <a
-                  href="https://www.instagram.com/rehantravelagency?igsh=OTFxa2ZycGQyNW1j"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="icon-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="img" focusable="false">
-                      <path
-                        d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.8 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"
-                      />
-                    </svg>
-                  </span>
-                  @rehantravelagency
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <img src="assets/logo-dark.svg" alt="Rehan Travel Agency" />
-        <div class="footer-links">
-          <a href="tel:+918178054327">Call</a>
-          <a href="mailto:rehanthehero009@gmail.com">Email</a>
-          <a
-            href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20want%20to%20book%20a%20trip."
-            target="_blank"
-            rel="noreferrer"
-            >WhatsApp</a
-          >
-          <a
-            href="https://www.instagram.com/rehantravelagency?igsh=OTFxa2ZycGQyNW1j"
-            target="_blank"
-            rel="noreferrer"
-            >Instagram</a
-          >
+          <p class="place-search-status" id="place-search-status" role="status">Search Indian origin cities and destinations or attractions worldwide.</p>
+          <form class="booking-form" id="booking-form">
+            <input type="hidden" id="service-type" value="Flight" />
+            <label class="field field-place">
+              <span id="first-label">From</span>
+              <input id="first-field" name="from" autocomplete="off" list="origin-options" placeholder="Departure city" required />
+            </label>
+            <span class="swap-icon" aria-hidden="true">→</span>
+            <label class="field field-place">
+              <span id="second-label">To</span>
+              <input id="second-field" name="to" autocomplete="off" list="destination-options" placeholder="Arrival city" required />
+            </label>
+            <label class="field field-date">
+              <span id="date-label">Depart</span>
+              <input id="date-field" name="date" type="text" inputmode="numeric" autocomplete="off" placeholder="DD/MM/YYYY" maxlength="10" pattern="\d{2}/\d{2}/\d{4}" required />
+            </label>
+            <label class="field field-travellers">
+              <span id="people-label">Travellers</span>
+              <select id="people-field" name="people" aria-label="Number of travellers">
+                <option>1 Traveller</option>
+                <option>2 Travellers</option>
+                <option>3 Travellers</option>
+                <option>4 Travellers</option>
+                <option>5+ Travellers</option>
+              </select>
+            </label>
+            <button class="booking-submit" type="submit">Request a quote <span aria-hidden="true">↗</span></button>
+          </form>
+          <datalist id="origin-options">
+            <option value="Delhi"></option><option value="Mumbai"></option><option value="Bengaluru"></option><option value="Kolkata"></option><option value="Chennai"></option><option value="Hyderabad"></option><option value="Pune"></option><option value="Ahmedabad"></option><option value="Lucknow"></option><option value="Jaipur"></option><option value="Srinagar"></option><option value="Chandigarh"></option><option value="Amritsar"></option><option value="Varanasi"></option><option value="Patna"></option><option value="Guwahati"></option><option value="Kochi"></option><option value="Thiruvananthapuram"></option><option value="Bhubaneswar"></option><option value="Indore"></option><option value="Nagpur"></option><option value="Surat"></option><option value="Coimbatore"></option><option value="Visakhapatnam"></option>
+          </datalist>
+          <datalist id="destination-options">
+            <option value="Kashmir"></option><option value="Srinagar"></option><option value="Manali"></option><option value="Shimla"></option><option value="Goa"></option><option value="Jaipur"></option><option value="Udaipur"></option><option value="Kerala"></option><option value="Kochi"></option><option value="Munnar"></option><option value="Leh Ladakh"></option><option value="Rishikesh"></option><option value="Varanasi"></option><option value="Darjeeling"></option><option value="Andaman"></option><option value="Lakshadweep"></option><option value="Agra"></option><option value="Dubai"></option><option value="Abu Dhabi"></option><option value="Singapore"></option><option value="Bangkok"></option><option value="Phuket"></option><option value="Bali"></option><option value="Kuala Lumpur"></option><option value="Maldives"></option><option value="London"></option><option value="Paris"></option><option value="Rome"></option><option value="Istanbul"></option><option value="Tokyo"></option><option value="Seoul"></option><option value="New York"></option><option value="Sydney"></option><option value="Mauritius"></option><option value="Sri Lanka"></option><option value="Vietnam"></option><option value="Taj Mahal, Agra"></option><option value="Burj Khalifa, Dubai"></option><option value="Eiffel Tower, Paris"></option><option value="Marina Bay Sands, Singapore"></option><option value="Great Wall of China"></option><option value="Machu Picchu, Peru"></option><option value="Santorini, Greece"></option><option value="Swiss Alps"></option>
+          </datalist>
+          <p class="booking-note"><span aria-hidden="true">●</span> Live place suggestions appear as you type. Your request goes directly to Rehan Travel Agency on WhatsApp. Location search data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a>.</p>
         </div>
-        <p>&copy; 2026 Rehan Travel Agency. All Rights Reserved.</p>
-      </footer>
-    </div>
+      </section>
 
-    <script src="script.js?v=1"></script>
+      <section class="trust-strip shell" aria-label="Agency features">
+        <div><span class="trust-number">01</span><p><strong>Personal booking help</strong>Real assistance before and after you book.</p></div>
+        <div><span class="trust-number">02</span><p><strong>Clear, practical options</strong>Routes and stays that fit your plans.</p></div>
+        <div><span class="trust-number">03</span><p><strong>One point of contact</strong>Call or message whenever you need us.</p></div>
+      </section>
+
+      <section class="services shell" id="services" aria-labelledby="services-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">OUR SERVICES</p>
+            <h2 id="services-title">The essentials of every good journey.</h2>
+          </div>
+          <p class="section-description">Choose the service you need. We’ll help you find sensible options, understand the details, and make your booking with confidence.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card flight-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 13 18-10-6 18-4-7-8-1Zm8.8-1.4 2.1 3.6 2.1-6.5-4.2 2.9Z" /></svg></div>
+            <span class="service-count">01</span>
+            <h3>Flight bookings</h3>
+            <p>Domestic and international travel, planned around your dates, routes and preferences.</p>
+            <a href="#booking" data-pick-service="flight">Book a flight <span>↗</span></a>
+          </article>
+          <article class="service-card train-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3l2 3h-3l-1.3-2H9.3L8 22H5l2-3a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 3v5h10V6H7Zm1 10a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 8 16Zm8 0a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 16 16Z" /></svg></div>
+            <span class="service-count">02</span>
+            <h3>Train bookings</h3>
+            <p>Rail journeys made simpler with thoughtful route and availability guidance.</p>
+            <a href="#booking" data-pick-service="train">Book a train <span>↗</span></a>
+          </article>
+          <article class="service-card bus-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a3 3 0 0 1 3 3v12a2 2 0 0 1-2 2h-1a3 3 0 0 1-6 0h-1a3 3 0 0 1-6 0H4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3Zm0 3v6h12V6H6Zm1 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" /></svg></div>
+            <span class="service-count">03</span>
+            <h3>Bus bookings</h3>
+            <p>Practical intercity travel options for trips that need to keep moving.</p>
+            <a href="#booking" data-pick-service="bus">Book a bus <span>↗</span></a>
+          </article>
+          <article class="service-card hotel-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11V5h3v6h15a2 2 0 0 1 2 2v6h-2v-3H3v3H1V5h2v6Zm5-4h5a3 3 0 0 1 3 3v1H8V7Z" /></svg></div>
+            <span class="service-count">04</span>
+            <h3>Hotel stays</h3>
+            <p>Places to stay selected around your destination, group size and budget.</p>
+            <a href="#booking" data-pick-service="hotel">Book a hotel <span>↗</span></a>
+          </article>
+          <article class="service-card holiday-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3V3Zm2 2h2V5h-2v2H6v12h12V7h-5v2h-2V7Z" /></svg></div>
+            <span class="service-count">05</span>
+            <h3>Holiday planning</h3>
+            <p>Custom holiday trips from your city to the destination you have in mind.</p>
+            <a href="#booking" data-pick-service="holiday">Plan a holiday <span>↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="destinations-section shell" id="destinations" aria-labelledby="destinations-title">
+        <div class="destinations-head">
+          <div>
+            <p class="section-kicker">DESTINATION IDEAS</p>
+            <h2 id="destinations-title">From nearby escapes to faraway favourites.</h2>
+          </div>
+          <p>Choose a route or destination to start a booking request. These are popular travel ideas — the team will confirm availability, timings and prices for your dates.</p>
+        </div>
+        <div class="destination-grid">
+          <article class="destination-card destination-flight">
+            <div><span>01</span><strong>Flights</strong></div>
+            <p>Domestic &amp; international routes</p>
+            <a href="#booking" data-route-service="flight" data-route-from="Delhi" data-route-to="Srinagar, Jammu and Kashmir">Delhi <b>→</b> Srinagar</a>
+            <a href="#booking" data-route-service="flight" data-route-from="Mumbai" data-route-to="Dubai, United Arab Emirates">Mumbai <b>→</b> Dubai</a>
+            <a href="#booking" data-route-service="flight" data-route-from="Delhi" data-route-to="London, United Kingdom">Delhi <b>→</b> London</a>
+            <a href="#booking" data-route-service="flight" data-route-from="Bengaluru" data-route-to="Singapore">Bengaluru <b>→</b> Singapore</a>
+          </article>
+          <article class="destination-card destination-train">
+            <div><span>02</span><strong>Trains</strong></div>
+            <p>Memorable Indian rail journeys</p>
+            <a href="#booking" data-route-service="train" data-route-from="Delhi" data-route-to="Varanasi, Uttar Pradesh">Delhi <b>→</b> Varanasi</a>
+            <a href="#booking" data-route-service="train" data-route-from="Mumbai" data-route-to="Madgaon, Goa">Mumbai <b>→</b> Goa</a>
+            <a href="#booking" data-route-service="train" data-route-from="Delhi" data-route-to="Jaipur, Rajasthan">Delhi <b>→</b> Jaipur</a>
+            <a href="#booking" data-route-service="train" data-route-from="Kolkata" data-route-to="New Jalpaiguri, West Bengal">Kolkata <b>→</b> Darjeeling</a>
+          </article>
+          <article class="destination-card destination-bus">
+            <div><span>03</span><strong>Buses</strong></div>
+            <p>Popular short and scenic getaways</p>
+            <a href="#booking" data-route-service="bus" data-route-from="Delhi" data-route-to="Manali, Himachal Pradesh">Delhi <b>→</b> Manali</a>
+            <a href="#booking" data-route-service="bus" data-route-from="Bengaluru" data-route-to="Goa">Bengaluru <b>→</b> Goa</a>
+            <a href="#booking" data-route-service="bus" data-route-from="Mumbai" data-route-to="Pune, Maharashtra">Mumbai <b>→</b> Pune</a>
+            <a href="#booking" data-route-service="bus" data-route-from="Ahmedabad" data-route-to="Udaipur, Rajasthan">Ahmedabad <b>→</b> Udaipur</a>
+          </article>
+          <article class="destination-card destination-hotel">
+            <div><span>04</span><strong>Hotels</strong></div>
+            <p>Stays in city, beach and mountain escapes</p>
+            <a href="#booking" data-route-service="hotel" data-route-from="Goa, India">Explore stays in Goa <b>↗</b></a>
+            <a href="#booking" data-route-service="hotel" data-route-from="Jaipur, Rajasthan">Explore stays in Jaipur <b>↗</b></a>
+            <a href="#booking" data-route-service="hotel" data-route-from="Dubai, United Arab Emirates">Explore stays in Dubai <b>↗</b></a>
+            <a href="#booking" data-route-service="hotel" data-route-from="Bali, Indonesia">Explore stays in Bali <b>↗</b></a>
+          </article>
+          <article class="destination-card destination-holiday">
+            <div><span>05</span><strong>Holidays</strong></div>
+            <p>Domestic escapes &amp; international breaks</p>
+            <a href="#booking" data-route-service="holiday" data-route-from="Delhi" data-route-to="Kashmir, India">Delhi <b>→</b> Kashmir</a>
+            <a href="#booking" data-route-service="holiday" data-route-from="Mumbai" data-route-to="Kerala, India">Mumbai <b>→</b> Kerala</a>
+            <a href="#booking" data-route-service="holiday" data-route-from="Bengaluru" data-route-to="Thailand">Bengaluru <b>→</b> Thailand</a>
+            <a href="#booking" data-route-service="holiday" data-route-from="Delhi" data-route-to="Bali, Indonesia">Delhi <b>→</b> Bali</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="process-section" id="how-it-works" aria-labelledby="process-title">
+        <div class="shell process-grid">
+          <div class="process-intro">
+            <p class="section-kicker section-kicker-light">HOW IT WORKS</p>
+            <h2 id="process-title">A clearer way to book.</h2>
+            <p>Tell us the essentials. We’ll take it from there with options that work for your journey.</p>
+            <a href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20need%20help%20planning%20my%20travel." target="_blank" rel="noreferrer">Message us on WhatsApp <span>↗</span></a>
+          </div>
+          <ol class="process-list">
+            <li><span>01</span><div><h3>Share your trip</h3><p>Send your route, dates and number of travellers through the quick request form.</p></div></li>
+            <li><span>02</span><div><h3>Review your options</h3><p>We help you compare practical choices for the service you need.</p></div></li>
+            <li><span>03</span><div><h3>Travel with support</h3><p>Once booked, you still have a helpful contact for your journey.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact-section shell" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="section-kicker">LET’S GO</p>
+          <h2 id="contact-title">Ready when you are.</h2>
+          <p>For a quick booking request or a travel question, get in touch directly. We’re here to make the next step easy.</p>
+          <a class="button button-dark" href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20would%20like%20to%20make%20a%20booking." target="_blank" rel="noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-list">
+          <a href="tel:+918178054327"><span>Call us</span><strong>+91 81780 54327</strong><i>↗</i></a>
+          <a href="mailto:rehantravelagency2026@gmail.com"><span>Email us</span><strong>rehantravelagency2026@gmail.com</strong><i>↗</i></a>
+          <a href="https://www.instagram.com/rehantravelagency?igsh=OTFxa2ZycGQyNW1j" target="_blank" rel="noreferrer"><span>Follow us</span><strong>@rehantravelagency</strong><i>↗</i></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <img src="assets/logo-light.png" alt="Rehan Travel Agency" />
+        <p>Flights · Trains · Buses · Hotels · Holidays</p>
+        <p class="footer-note">© 2026 Rehan Travel Agency. Your journey, our responsibility.</p>
+        <a href="#top" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js?v=3"></script>
   </body>
 </html>
