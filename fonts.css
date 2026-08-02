@@ -1,0 +1,39 @@
+/* fonts.css — role-based font variables and utility classes
+   Maps user-specified font categories to site elements.
+   Sans-serif: Poppins, Rubik, Nunito, Cabin — booking UIs, tables, forms
+   Display: Playfair Display — hero banners & headlines
+   Script: Great Vibes — luxury branding accents
+   Handwritten: Pacifico — casual/adventure badges
+*/
+:root{
+  --font-sans: 'Poppins', 'Rubik', 'Nunito', 'Cabin', 'DM Sans', Arial, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-handwritten: 'Pacifico', cursive;
+}
+
+/* Site defaults */
+body{font-family:var(--font-sans);}
+
+/* Utility classes to apply fonts by role */
+.font-sans{font-family:var(--font-sans);}
+.font-display{font-family:var(--font-display);}
+.font-script{font-family:var(--font-script);}
+.font-handwritten{font-family:var(--font-handwritten);}
+
+/* Apply display font to primary hero & section headings for emphasis */
+.hero h1, .section-heading h2, .service-gallery h2, .contact-cta h2{font-family:var(--font-display);}
+
+/* Use script for brand accents (small, decorative) */
+.brand .logo-text, .eyebrow.brand-accent{font-family:var(--font-script);} 
+
+/* Handwritten for badges, stickers */
+.badge, .destination-type{font-family:var(--font-handwritten);}
+
+/* Stronger weights for UI headings */
+.service-grid h3, .destination-grid h3{font-weight:700;font-family:var(--font-sans);}
+
+/* Small responsive tweak */
+@media (max-width:640px){
+  .hero h1{font-size:2rem}
+}

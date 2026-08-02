@@ -1,0 +1,10 @@
+/* footer.css — layout and styles for address and visitor counter */
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;font-size:13px}
+.footer-info{flex:1}
+.footer-info address{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:6px}
+.footer-actions{display:flex;align-items:center;gap:14px}
+.visitor-counter{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:700;color:var(--white)}
+@media (max-width:720px){
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-actions{width:100%;justify-content:space-between}
+}

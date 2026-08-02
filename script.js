@@ -44,12 +44,14 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
-routeForm.addEventListener("submit", event => {
-  event.preventDefault();
-  if (!routeForm.reportValidity()) return;
-  const text = ["Hello Rehan Travel Agency, I would like a route quote.", "", `Service: ${routeService.value}`, `From: ${routeOrigin.value}`, `To: ${routeDestination.value}`].join("\n");
-  window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-});
+if (routeForm) {
+  routeForm.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!routeForm.reportValidity()) return;
+    const text = ["Hello Rehan Travel Agency, I would like a route quote.", "", `Service: ${routeService.value}`, `From: ${routeOrigin.value}`, `To: ${routeDestination.value}`].join("\n");
+    window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  });
+}
 
 search.addEventListener("input", render);
 document.querySelectorAll("[data-filter]").forEach(button => button.addEventListener("click", () => {

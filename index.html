@@ -8,9 +8,12 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <!-- Fonts: Sans (Poppins, Rubik, Nunito, Cabin), Display, Script, Handwritten -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@400;500;700&family=Nunito:wght@400;600&family=Cabin:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="3d.css">
+  <link rel="stylesheet" href="footer.css">
 </head>
 <body>
   <header class="site-header" id="top">
@@ -26,11 +29,7 @@
 
     <section class="service-intro shell" id="services">
       <div class="section-heading"><p class="eyebrow dark">SERVICES WE OFFER</p><h2>Everything you need to start moving.</h2><p>Choose a service and send us your requirements. We’ll reply with the most practical options for your route, dates and budget.</p></div>
-      <form class="service-route" id="service-route">
-        <label><span>Service</span><select id="route-service"><option>Flight booking</option><option>Railway ticket booking</option><option>Bus and coach booking</option><option>Hotel booking</option><option>Holiday package</option><option>Visa assistance</option></select></label>
-        <label><span>Origin city</span><input id="route-origin" required placeholder="e.g. Delhi"></label><span class="route-arrow">→</span>
-        <label><span>Destination city</span><input id="route-destination" required placeholder="e.g. Mumbai"></label><button type="submit">Get route quote ↗</button>
-      </form>
+      <!-- service-route removed per request -->
       <div class="service-grid">
         <article><span>01</span><div class="service-icon">✈</div><h3>Flight Booking</h3><p>Domestic and international flights, arranged around the timing that works for you.</p><button data-service="Flight booking">Enquire now ↗</button></article>
         <article><span>02</span><div class="service-icon">▣</div><h3>Railway Tickets</h3><p>Train tickets and route support for journeys across India.</p><button data-service="Railway ticket booking">Enquire now ↗</button></article>
@@ -70,7 +69,19 @@
     <section class="destination-section" id="destinations"><div class="shell"><div class="section-heading destination-heading"><div><p class="eyebrow dark">POPULAR DESTINATIONS</p><h2>Make your next place<br>your favourite place.</h2></div><p>Search destinations or choose domestic and international travel ideas. Tap Book Now to send the destination directly on WhatsApp.</p></div><div class="destination-tools"><input id="destination-search" type="search" placeholder="Search Kashmir, Dubai, Bali…"><div class="filter-pills"><button class="is-active" data-filter="all">All</button><button data-filter="domestic">Domestic</button><button data-filter="international">International</button></div></div><p id="destination-count" class="destination-count"></p><div id="destination-grid" class="destination-grid" aria-live="polite"></div></div></section>
     <section class="contact-cta" id="contact"><div class="shell cta-inner"><div><p class="eyebrow">LET’S PLAN YOUR JOURNEY</p><h2>Want options tailored to you?</h2><p>Tell us your route, dates and traveller count. We’ll continue the conversation on WhatsApp.</p></div><button type="button" class="button button-gold" data-open-query>Send travel enquiry ↗</button></div></section>
   </main>
-  <footer><div class="shell footer-inner"><img src="assets/rehan-logo-circle.png" alt="Rehan Travel Agency"><p>Flights · Trains · Buses · Hotels · Holidays · Visa Assistance</p><a href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20would%20like%20a%20booking%20quote." target="_blank" rel="noreferrer">WhatsApp us ↗</a></div></footer>
+  <footer>
+    <div class="shell footer-inner">
+      <img src="assets/rehan-logo-circle.png" alt="Rehan Travel Agency">
+      <div class="footer-info">
+        <p>Flights · Trains · Buses · Hotels · Holidays · Visa Assistance</p>
+        <address>A158/5, HARIOM APPT. SHALIMAR GARDEN EXT 2, GHAZIABAD, UTTAR PRADESH</address>
+      </div>
+      <div class="footer-actions">
+        <a href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20would%20like%20a%20booking%20quote." target="_blank" rel="noreferrer">WhatsApp us ↗</a>
+        <div class="visitor-counter" aria-live="polite">Visitors: <span id="visitor-count">—</span></div>
+      </div>
+    </div>
+  </footer>
   
   <div class="modal" id="query-modal" aria-hidden="true"><div class="modal-backdrop" data-close-query></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close" type="button" data-close-query aria-label="Close">×</button><p class="eyebrow dark">QUICK ENQUIRY</p><h2 id="modal-title">Where would you like to go?</h2><p>Fill the details below and we’ll open WhatsApp with your request.</p><form id="query-form"><label>Your name<input name="name" required placeholder="Name"></label><label>Phone number<input name="phone" required inputmode="tel" placeholder="Phone number"></label><label>Service<select id="query-service" name="service"><option>Holiday package</option><option>Flight booking</option><option>Railway ticket booking</option><option>Bus and coach booking</option><option>Hotel booking</option><option>Visa assistance</option></select></label><div class="form-row"><label>Origin city<input name="origin" placeholder="Where are you travelling from?"></label><label>Destination city<input name="destination" placeholder="Where do you want to go?"></label></div><label>Travellers<select name="travellers"><option>1 Traveller</option><option>2 Travellers</option><option>3–4 Travellers</option><option>5+ Travellers</option></select></label><label>Message<textarea name="message" rows="3" placeholder="Travel date or anything else we should know"></textarea></label><button type="submit">Continue on WhatsApp ↗</button></form></div></div>
   <script src="script.js?v=9"></script>
