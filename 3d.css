@@ -1,0 +1,53 @@
+/* 3D dynamic enhancements for Rehan Travel Agency */
+:root{
+  --perspective:1200px;
+  --card-z:30px;
+}
+/* Hero & gallery perspective */
+.hero{perspective:var(--perspective);-webkit-perspective:var(--perspective)}
+.hero-content{transform-style:preserve-3d;transition:transform .22s ease,box-shadow .22s ease;will-change:transform}
+.gallery-viewport{perspective:1000px;overflow:hidden}
+.gallery-track{transform-style:preserve-3d;transition:transform .25s ease;will-change:transform}
+
+/* Destination cards - 3D tilt & pop */
+.destination-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(3,30,49,0.12);transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s;transform-origin:center;transform-style:preserve-3d;will-change:transform}
+.destination-card img{display:block;width:100%;height:180px;object-fit:cover;transform:translateZ(0);transition:transform .28s ease}
+.destination-card:hover{transform:translateY(-10px) rotateX(6deg) rotateY(-4deg) translateZ(var(--card-z));box-shadow:0 20px 40px rgba(3,30,49,0.18)}
+.destination-card:hover img{transform:scale(1.03) translateZ(20px)}
+
+/* Make interactive elements feel deeper */
+.button, .nav-cta{transition:transform .18s ease,box-shadow .18s ease}
+.button:active, .nav-cta:active{transform:translateZ(6px)}
+
+/* Small subtle sheen animation for hero */
+.hero::after{content:"";position:absolute;left:-40%;top:0;height:100%;width:40%;background:linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02),rgba(255,255,255,0.08));transform:skewX(-18deg) translateX(-100%);pointer-events:none;transition:transform 1.6s ease}
+.hero:hover::after{transform:skewX(-18deg) translateX(120%)}
+
+/* Reduce motion for prefers-reduced-motion */
+@media (prefers-reduced-motion:reduce){
+  .hero::after,.hero-content,.gallery-track,.destination-card{transition:none}
+}
+
+/* Gallery figure overlay layers (dynamic two-layer effect) */
+.gallery-track figure{position:relative;overflow:hidden;border-radius:6px}
+.gallery-track .overlay-layers{position:absolute;inset:0;pointer-events:none}
+.gallery-track .overlay-layers .layer{position:absolute;inset:0;transition:transform .45s cubic-bezier(.2,.9,.2,1),opacity .45s;pointer-events:none}
+.gallery-track .overlay-layers .layer-back{background:linear-gradient(180deg,rgba(0,0,0,0.12),transparent);transform:translateZ(-20px) scale(1.06);opacity:0}
+.gallery-track .overlay-layers .layer-front{background:linear-gradient(180deg,rgba(0,0,0,0.28),rgba(0,0,0,0.06));transform:translateZ(10px) scale(1);opacity:0}
+.gallery-track figure:hover .overlay-layers .layer-back{transform:translateZ(0) scale(1);opacity:1}
+.gallery-track figure:hover .overlay-layers .layer-front{transform:translateZ(30px) scale(1.02);opacity:1}
+
+/* Book Now overlay button */
+.book-now-overlay{position:absolute;right:18px;bottom:18px;z-index:6;pointer-events:auto;background:var(--teal);color:var(--white);border:0;padding:10px 14px;border-radius:999px;font-weight:700;font-size:13px;box-shadow:0 8px 20px rgba(3,30,49,0.18);transform:translateZ(40px);transition:transform .22s ease,opacity .18s}
+.gallery-track figure:hover .book-now-overlay{transform:translateZ(60px) translateY(-6px)}
+
+/* Make service route (search) feel deeper and improve text style */
+.service-route{background:var(--mint);padding:26px;border-radius:6px;display:flex;align-items:center;gap:18px;box-shadow:0 8px 20px rgba(3,30,49,0.06);transform-style:preserve-3d;transition:transform .22s cubic-bezier(.2,.9,.2,1),box-shadow .22s}
+.service-route:hover{transform:translateY(-6px) translateZ(6px);box-shadow:0 20px 40px rgba(3,30,49,0.12)}
+.service-route label{flex:1;display:flex;flex-direction:column;gap:8px}
+.service-route input, .service-route select{padding:12px 10px;border:0;border-bottom:2px solid var(--line);background:transparent;font-weight:600;color:var(--ink);font-size:15px}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .gallery-track .overlay-layers .layer, .book-now-overlay, .service-route{transition:none}
+}

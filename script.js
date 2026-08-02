@@ -89,3 +89,73 @@ if (toggle) {
 }
 
 render();
+
+/* 3D parallax & tilt enhancements */
+(function(){
+  const heroContent = document.querySelector('.hero-content');
+  const gallery = document.querySelector('.gallery-track');
+  let mouseX = 0, mouseY = 0;
+
+  function onMove(e){
+    const cx = (e.clientX ?? (e.touches && e.touches[0].clientX)) - window.innerWidth/2;
+    const cy = (e.clientY ?? (e.touches && e.touches[0].clientY)) - window.innerHeight/2;
+    mouseX = cx; mouseY = cy;
+  }
+
+  function update(){
+    const ry = (mouseX / window.innerWidth) * 12; // rotateY
+    const rx = (mouseY / window.innerHeight) * -8; // rotateX
+    if (heroContent) heroContent.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+    if (gallery) gallery.style.transform = `translateX(${-(mouseX/60)}px) translateY(${-(mouseY/120)}px) rotateY(${ry/3}deg)`;
+    if (routeForm) routeForm.style.transform = `rotateX(${rx/3}deg) rotateY(${ry/3}deg)`;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('pointermove', onMove, {passive:true});
+  requestAnimationFrame(update);
+
+  // Per-card tilt on pointer move + reset on leave
+  document.addEventListener('pointermove', (e) => {
+    const card = e.target.closest('.destination-card');
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const dx = (e.clientX - (rect.left + rect.width/2)) / rect.width;
+    const dy = (e.clientY - (rect.top + rect.height/2)) / rect.height;
+    const ry = dx * 8; const rx = dy * -8;
+    card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  }, {passive:true});
+
+  document.addEventListener('pointerleave', (e) => {
+    const card = e.target.closest('.destination-card');
+    if (!card) return;
+    card.style.transform = '';
+  }, true);
+})();
+
+// Handle Book Now overlay clicks in the service gallery
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.book-now-overlay');
+  if (!btn) return;
+  const service = btn.dataset.service || 'Service booking';
+  const text = [`Hello Rehan Travel Agency, I would like to book a service.`, ``, `Service: ${service}`].join('\n');
+  window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+});
+
+// Inject overlay layers + Book Now button into all gallery figures (if not already present)
+document.addEventListener('DOMContentLoaded', () => {
+  const figures = document.querySelectorAll('.gallery-track > figure');
+  figures.forEach(fig => {
+    if (fig.querySelector('.overlay-layers')) return; // already injected
+    const img = fig.querySelector('img');
+    const caption = fig.querySelector('figcaption')?.textContent?.trim() || img?.alt || 'Service';
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay-layers';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = `
+      <div class="layer layer-back"></div>
+      <div class="layer layer-front"></div>
+      <button class="book-now-overlay" type="button" data-service="${caption}">Book Now</button>
+    `;
+    fig.appendChild(overlay);
+  });
+});
