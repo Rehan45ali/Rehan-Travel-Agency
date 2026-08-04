@@ -1,12 +1,12 @@
 const destinations = [
-  { name: "Kashmir", type: "domestic", about: "Srinagar, Gulmarg & Pahalgam", image: "assets/kashmir-hero.png" },
-  { name: "Goa", type: "domestic", about: "Beaches, cafés & coastal stays", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80" },
-  { name: "Kerala", type: "domestic", about: "Backwaters, tea hills & beaches", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80" },
-  { name: "Rajasthan", type: "domestic", about: "Jaipur, Udaipur & desert trails", image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80" },
-  { name: "Dubai", type: "international", about: "Skyline, desert & luxury breaks", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" },
-  { name: "Bali", type: "international", about: "Beaches, temples & island stays", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80" },
-  { name: "Singapore", type: "international", about: "City lights & family fun", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80" },
-  { name: "Paris", type: "international", about: "Culture, cafés & iconic sights", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80" }
+  { name: "Paris", type: "international", about: "Romantic streets, icons & luxury stays", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Dubai", type: "international", about: "Skyline, desert escapes & premium shopping", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Santorini", type: "international", about: "Clifftop sunsets, whitewashed views & calm seas", image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Maldives", type: "international", about: "Overwater villas, turquoise water & resort escapes", image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Tokyo", type: "international", about: "Modern energy, culture & exceptional dining", image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Singapore", type: "international", about: "Clean city breaks, family fun & skyline views", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85" },
+  { name: "Bali", type: "international", about: "Beach villas, temples & tropical retreats", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85" },
+  { name: "London", type: "international", about: "Classic city icons, shopping & culture", image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=85" }
 ];
 
 const grid = document.querySelector("#destination-grid");
@@ -118,6 +118,7 @@ render();
 
   // Per-card tilt on pointer move + reset on leave
   document.addEventListener('pointermove', (e) => {
+    if (!(e.target instanceof Element)) return;
     const card = e.target.closest('.destination-card');
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -128,6 +129,7 @@ render();
   }, {passive:true});
 
   document.addEventListener('pointerleave', (e) => {
+    if (!(e.target instanceof Element)) return;
     const card = e.target.closest('.destination-card');
     if (!card) return;
     card.style.transform = '';
@@ -136,11 +138,36 @@ render();
 
 // Handle Book Now overlay clicks in the service gallery
 document.addEventListener('click', (e) => {
+  if (!(e.target instanceof Element)) return;
   const btn = e.target.closest('.book-now-overlay');
   if (!btn) return;
   const service = btn.dataset.service || 'Service booking';
   const text = [`Hello Rehan Travel Agency, I would like to book a service.`, ``, `Service: ${service}`].join('\n');
   window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+});
+
+// Visitor counter (global) using CountAPI — increments and returns the value
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('visitor-count');
+  if (!el) return;
+  if (location.protocol === 'file:') {
+    el.textContent = 'N/A';
+    return;
+  }
+  const namespace = 'rehan-travel-agency';
+  const key = 'site-visitors';
+  fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data && typeof data.value !== 'undefined') el.textContent = Number(data.value).toLocaleString();
+    })
+    .catch(() => {
+      // fallback: try to read without increment, or show N/A
+      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`).then(r => r.json()).then(d => {
+        if (d && typeof d.value !== 'undefined') el.textContent = Number(d.value).toLocaleString();
+        else el.textContent = 'N/A';
+      }).catch(() => { el.textContent = 'N/A'; });
+    });
 });
 
 // Inject overlay layers + Book Now button into all gallery figures (if not already present)
