@@ -14,6 +14,85 @@
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="3d.css">
   <link rel="stylesheet" href="footer.css">
+  <style>
+    :root{--navy:#0d2f4a;--deep:#041622;--teal:#17736d;--mint:#eef6f2;--gold:#d39a2e;--ink:#163044;--muted:#60717b;--line:#d7e4df}
+    body{background:linear-gradient(180deg,#ffffff 0%,#f7faf8 46%,#eef5f1 100%);color:var(--ink);font-family:"Poppins",Arial,sans-serif}
+    .hero{position:relative;overflow:hidden;min-height:760px;background:
+      radial-gradient(circle at 18% 18%,rgba(23,115,109,.18),transparent 28%),
+      radial-gradient(circle at 82% 16%,rgba(211,154,46,.16),transparent 22%),
+      linear-gradient(135deg,rgba(5,24,38,.92),rgba(12,54,74,.88) 52%,rgba(21,104,103,.74)),
+      url("assets/travel-services-hero.png") center/cover;}
+    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero::before{width:420px;height:420px;right:-120px;top:-80px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 68%);animation:floatGlow 10s ease-in-out infinite}
+    .hero::after{width:260px;height:260px;left:-60px;bottom:-90px;background:radial-gradient(circle,rgba(211,154,46,.14),rgba(211,154,46,0) 70%);animation:floatGlow 12s ease-in-out infinite reverse}
+    .hero-shade{background:linear-gradient(110deg,rgba(2,14,25,.88),rgba(2,14,25,.48) 54%,rgba(2,14,25,.08));mix-blend-mode:multiply}
+    .hero-content{max-width:760px;padding:112px 0 126px;animation:fadeUp .95s ease both}
+    .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.07);backdrop-filter:blur(8px);color:#eff8f7;font-size:12px;letter-spacing:.18em;font-weight:700}
+    .hero-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#f4bd57;box-shadow:0 0 0 6px rgba(244,189,87,.15)}
+    .hero h1{font-family:"Playfair Display",Georgia,serif;max-width:760px;margin:18px 0 14px;font-size:clamp(56px,7.8vw,96px);line-height:.96;letter-spacing:-.03em;text-wrap:balance}
+    .hero h1 em{font-style:normal;color:#f6d38a}
+    .hero p{max-width:640px;font-size:18px;line-height:1.85;color:#d7e7e8}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .button,.nav-cta{border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}
+    .button:hover,.nav-cta:hover,.destination-card button:hover,.contact-cta .button:hover{transform:translateY(-2px)}
+    .button-gold{background:linear-gradient(135deg,#f2c15e,#c98518);color:#fff;box-shadow:0 16px 34px rgba(201,133,24,.28)}
+    .button-light{background:rgba(255,255,255,.95);color:var(--navy);box-shadow:0 16px 34px rgba(0,0,0,.14)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;max-width:620px}
+    .hero-stats div{padding:18px 16px;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:rgba(255,255,255,.07);backdrop-filter:blur(10px)}
+    .hero-stats strong{display:block;font-size:24px;line-height:1.1;color:#fff}
+    .hero-stats span{display:block;margin-top:6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d4e4e4}
+    .hero-floating{position:absolute;right:5vw;bottom:84px;width:min(360px,32vw);padding:18px;border:1px solid rgba(255,255,255,.16);border-radius:28px;background:rgba(7,24,38,.5);backdrop-filter:blur(14px);box-shadow:0 30px 80px rgba(0,0,0,.24);animation:floatCard 6s ease-in-out infinite}
+    .hero-floating img{display:block;width:100%;height:250px;object-fit:cover;border-radius:20px}
+    .hero-floating .floating-copy{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding:16px 4px 2px;color:#fff}
+    .hero-floating .floating-copy strong{display:block;font-size:15px}
+    .hero-floating .floating-copy span{display:block;margin-top:4px;color:#cde0e0;font-size:13px;line-height:1.5}
+    .hero-floating .floating-tag{white-space:nowrap;padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.08);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .service-grid--process article{position:relative;overflow:hidden}
+    .service-grid--process article::after{content:"";position:absolute;inset:auto -18% -34% auto;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(23,107,105,.12),rgba(23,107,105,0) 68%)}
+    .service-grid--process .service-icon{font-size:28px}
+    .service-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+    .service-highlights span{border:1px solid var(--line);background:#fff;padding:16px 18px;border-radius:999px;color:var(--ink);font-size:14px;line-height:1.4;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(6,43,69,.04)}
+    .service-highlights strong{color:var(--teal)}
+    .service-gallery{padding-top:24px}
+    .destination-section{position:relative;background:linear-gradient(180deg,#f8fbfa 0,#eef5f1 100%)}
+    .destination-section::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0));pointer-events:none}
+    .destination-section .shell{position:relative;z-index:1}
+    .section-heading h2,.service-gallery h2,.contact-cta h2{font-family:"Playfair Display",Georgia,serif;color:var(--navy)}
+    .section-heading p{color:var(--muted);max-width:760px}
+    .destination-tools input,.destination-tools button{border-radius:999px}
+    .destination-tools input{border:1px solid var(--line);background:#fff;box-shadow:0 10px 28px rgba(6,43,69,.06)}
+    .filter-pills button{background:#fff;border:1px solid var(--line);box-shadow:0 10px 22px rgba(6,43,69,.04)}
+    .filter-pills .is-active{background:var(--navy);border-color:var(--navy);color:#fff}
+    .destination-card{border-radius:28px;overflow:hidden;box-shadow:0 24px 64px rgba(6,43,69,.08);transition:transform .3s ease,box-shadow .3s ease}
+    .destination-card:hover{transform:translateY(-8px);box-shadow:0 30px 72px rgba(6,43,69,.14)}
+    .destination-card img{height:300px;object-fit:cover}
+    .destination-body{padding:20px 20px 22px;background:linear-gradient(180deg,#fff 0%,#f7fbf8 100%)}
+    .destination-type{color:var(--teal);font-weight:700;letter-spacing:.12em}
+    .destination-body h3{font-family:"Playfair Display",Georgia,serif;color:var(--navy);font-size:30px}
+    .destination-body p{color:var(--muted)}
+    .destination-body button{border-radius:999px;background:var(--navy);color:#fff;box-shadow:0 16px 30px rgba(13,47,74,.24)}
+    .contact-cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b2b44,#123f58 60%,#176b69);color:#fff}
+    .contact-cta::before{content:"";position:absolute;inset:-30% -10% auto auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.14),rgba(255,255,255,0) 68%)}
+    .contact-cta h2,.contact-cta p,.contact-cta .eyebrow{color:#fff}
+    .contact-cta .eyebrow{opacity:.82}
+    .contact-cta .cta-inner{position:relative;z-index:1}
+    .contact-cta .button{background:#fff;color:var(--navy)}
+    .footer-inner{align-items:flex-start}
+    .footer-info p,.footer-info address{font-family:"Cabin",sans-serif}
+    .footer-info p{color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+    .footer-info address{color:var(--ink);font-style:normal;font-size:15px;line-height:1.7;max-width:380px}
+    .footer-actions a{background:var(--navy);color:#fff;border-radius:999px;padding:14px 18px;box-shadow:0 16px 30px rgba(13,47,74,.2)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(16px)}}
+    @keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @media (max-width: 900px){
+      .hero{min-height:auto}
+      .hero-content{padding:84px 0 92px}
+      .hero-floating{position:relative;right:auto;bottom:auto;width:100%;margin-top:24px}
+      .hero-stats,.service-highlights{grid-template-columns:1fr}
+      .service-highlights{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -25,19 +104,16 @@
     </div>
   </header>
   <main>
-    <section class="hero"><div class="hero-shade"></div><div class="shell hero-content"><p class="eyebrow">REHAN TRAVEL AGENCY</p><h1>Plan the trip.<br><em>We’ll handle the rest.</em></h1><p>Flights, rail tickets, hotels, buses and holidays — clear options and personal booking support in one place.</p><div class="hero-actions"><a href="#destinations" class="button button-gold">Explore destinations ↓</a><button type="button" class="button button-light" data-open-query>Get a quote</button></div></div></section>
+    <section class="hero"><div class="hero-shade"></div><div class="shell hero-content"><p class="hero-badge">WORLD TRAVEL CURATION • FAST QUOTES • PERSONAL SUPPORT</p><h1>Luxury travel.<br><em>Made simple.</em></h1><p>From flights and stays to complete holiday planning, we create smooth, stylish trips with the right options for your budget, timing and destination.</p><div class="hero-actions"><a href="#destinations" class="button button-gold">Explore world destinations ↓</a><button type="button" class="button button-light" data-open-query>Get a quote</button></div><div class="hero-stats"><div><strong>24/7</strong><span>Booking support</span></div><div><strong>100+</strong><span>Trip ideas</span></div><div><strong>5★</strong><span>Service focus</span></div></div></div><aside class="hero-floating" aria-label="Featured travel highlight"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Luxury world destination" loading="lazy"><div class="floating-copy"><div><strong>Signature escapes</strong><span>Handpicked routes, premium stays and polished itineraries for memorable travel.</span></div><span class="floating-tag">Premium</span></div></aside></section>
 
     <section class="service-intro shell" id="services">
-      <div class="section-heading"><p class="eyebrow dark">SERVICES WE OFFER</p><h2>Everything you need to start moving.</h2><p>Choose a service and send us your requirements. We’ll reply with the most practical options for your route, dates and budget.</p></div>
-      <!-- service-route removed per request -->
-      <div class="service-grid">
-        <article><span>01</span><div class="service-icon">✈</div><h3>Flight Booking</h3><p>Domestic and international flights, arranged around the timing that works for you.</p><button data-service="Flight booking">Enquire now ↗</button></article>
-        <article><span>02</span><div class="service-icon">▣</div><h3>Railway Tickets</h3><p>Train tickets and route support for journeys across India.</p><button data-service="Railway ticket booking">Enquire now ↗</button></article>
-        <article><span>03</span><div class="service-icon">▰</div><h3>Bus &amp; Coach</h3><p>Intercity buses, private cabs and group travel transfers.</p><button data-service="Bus and coach booking">Enquire now ↗</button></article>
-        <article><span>04</span><div class="service-icon">⌂</div><h3>Hotel Booking</h3><p>Comfortable stays selected around your destination and budget.</p><button data-service="Hotel booking">Enquire now ↗</button></article>
-        <article><span>05</span><div class="service-icon">◉</div><h3>Holiday Packages</h3><p>Custom domestic and international trips, built around your interests.</p><button data-service="Holiday package">Enquire now ↗</button></article>
-        <article><span>06</span><div class="service-icon">▤</div><h3>Visa Assistance</h3><p>Helpful guidance for travel documentation and visa requirements.</p><button data-service="Visa assistance">Enquire now ↗</button></article>
+      <div class="section-heading"><p class="eyebrow dark">HOW WE WORK</p><h2>Booking support built around your trip.</h2><p>Tell us where, when and how you want to travel. We’ll shortlist the best options, share practical combinations, and handle the follow-up.</p></div>
+      <div class="service-grid service-grid--process">
+        <article><span>01</span><div class="service-icon">✦</div><h3>Share your plan</h3><p>Send your route, dates and traveller count through WhatsApp or the quick enquiry form.</p></article>
+        <article><span>02</span><div class="service-icon">⇄</div><h3>Compare options</h3><p>We reply with the best fit for flights, rail, hotels, buses or holiday packages.</p></article>
+        <article><span>03</span><div class="service-icon">→</div><h3>Confirm &amp; travel</h3><p>Approve the option you like and we continue with tickets, stays and updates.</p></article>
       </div>
+      <div class="service-highlights" aria-label="Travel planning highlights"><span><strong>Fast replies</strong> on WhatsApp</span><span><strong>Flexible routes</strong> for every budget</span><span><strong>Personal help</strong> from enquiry to booking</span></div>
     </section>
 
     <section class="service-gallery" aria-label="Travel services photo gallery">
@@ -66,7 +142,7 @@
       </div></div>
     </section>
 
-    <section class="destination-section" id="destinations"><div class="shell"><div class="section-heading destination-heading"><div><p class="eyebrow dark">POPULAR DESTINATIONS</p><h2>Make your next place<br>your favourite place.</h2></div><p>Search destinations or choose domestic and international travel ideas. Tap Book Now to send the destination directly on WhatsApp.</p></div><div class="destination-tools"><input id="destination-search" type="search" placeholder="Search Kashmir, Dubai, Bali…"><div class="filter-pills"><button class="is-active" data-filter="all">All</button><button data-filter="domestic">Domestic</button><button data-filter="international">International</button></div></div><p id="destination-count" class="destination-count"></p><div id="destination-grid" class="destination-grid" aria-live="polite"></div></div></section>
+    <section class="destination-section" id="destinations"><div class="shell"><div class="section-heading destination-heading"><div><p class="eyebrow dark">WORLD DESTINATIONS</p><h2>Iconic places, premium visuals.</h2></div><p>Explore a curated mix of globally loved destinations with stronger imagery and a cleaner booking flow.</p></div><div class="destination-tools"><input id="destination-search" type="search" placeholder="Search Paris, Maldives, Tokyo…"><div class="filter-pills"><button class="is-active" data-filter="all">All</button><button data-filter="domestic">Domestic</button><button data-filter="international">International</button></div></div><p id="destination-count" class="destination-count"></p><div id="destination-grid" class="destination-grid" aria-live="polite"></div></div></section>
     <section class="contact-cta" id="contact"><div class="shell cta-inner"><div><p class="eyebrow">LET’S PLAN YOUR JOURNEY</p><h2>Want options tailored to you?</h2><p>Tell us your route, dates and traveller count. We’ll continue the conversation on WhatsApp.</p></div><button type="button" class="button button-gold" data-open-query>Send travel enquiry ↗</button></div></section>
   </main>
   <footer>
@@ -74,7 +150,7 @@
       <img src="assets/rehan-logo-circle.png" alt="Rehan Travel Agency">
       <div class="footer-info">
         <p>Flights · Trains · Buses · Hotels · Holidays · Visa Assistance</p>
-        <address>A158/5, HARIOM APPT. SHALIMAR GARDEN EXT 2, GHAZIABAD, UTTAR PRADESH</address>
+        <address>A158/5, HARIOM APPT. SHALIMAR GARDEN EXT 2<br>GHAZIABAD, UTTAR PRADESH</address>
       </div>
       <div class="footer-actions">
         <a href="https://wa.me/918178054327?text=Hello%20Rehan%20Travel%20Agency%2C%20I%20would%20like%20a%20booking%20quote." target="_blank" rel="noreferrer">WhatsApp us ↗</a>
@@ -84,6 +160,6 @@
   </footer>
   
   <div class="modal" id="query-modal" aria-hidden="true"><div class="modal-backdrop" data-close-query></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close" type="button" data-close-query aria-label="Close">×</button><p class="eyebrow dark">QUICK ENQUIRY</p><h2 id="modal-title">Where would you like to go?</h2><p>Fill the details below and we’ll open WhatsApp with your request.</p><form id="query-form"><label>Your name<input name="name" required placeholder="Name"></label><label>Phone number<input name="phone" required inputmode="tel" placeholder="Phone number"></label><label>Service<select id="query-service" name="service"><option>Holiday package</option><option>Flight booking</option><option>Railway ticket booking</option><option>Bus and coach booking</option><option>Hotel booking</option><option>Visa assistance</option></select></label><div class="form-row"><label>Origin city<input name="origin" placeholder="Where are you travelling from?"></label><label>Destination city<input name="destination" placeholder="Where do you want to go?"></label></div><label>Travellers<select name="travellers"><option>1 Traveller</option><option>2 Travellers</option><option>3–4 Travellers</option><option>5+ Travellers</option></select></label><label>Message<textarea name="message" rows="3" placeholder="Travel date or anything else we should know"></textarea></label><button type="submit">Continue on WhatsApp ↗</button></form></div></div>
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>
