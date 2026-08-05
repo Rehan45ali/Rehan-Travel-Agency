@@ -4,7 +4,6 @@ Modern static website for **Rehan Travel Agency** by Rehan Ali.
 
 ## Live Brand Details
 
-- Website: `www.rehantravelagency.com`
 - Tagline: `Your Journey, Our Responsibility`
 - Phone and WhatsApp: `+91 81780 54327`
 - Email: `rehantravelagency2026@gmail.com`
