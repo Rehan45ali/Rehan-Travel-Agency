@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Ooty travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f0e8"/>
+      <stop offset="45%" stop-color="#93c5d5"/>
+      <stop offset="100%" stop-color="#5d8b59"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 620 C200 580 440 565 680 595 C940 627 1200 650 1600 610 L1600 900 L0 900 Z" fill="#5d7c46"/>
+  <path d="M0 680 C260 640 520 655 780 700 C1080 756 1340 750 1600 700 L1600 900 L0 900 Z" fill="#3f6d46"/>
+  <g fill="#f2f0de">
+    <path d="M210 600 l80 -120 l80 120 z"/>
+    <path d="M340 630 l110 -160 l110 160 z"/>
+  </g>
+  <g fill="#2e4d33">
+    <rect x="220" y="620" width="24" height="120" rx="10"/>
+    <rect x="370" y="650" width="30" height="110" rx="10"/>
+    <rect x="470" y="660" width="30" height="100" rx="10"/>
+  </g>
+  <path d="M1010 780 C1120 700 1220 680 1300 692 C1360 702 1430 736 1500 780" stroke="#9d6f2f" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">Ooty</text>
+  <text x="80" y="872" fill="#eefdf0" font-family="Arial, sans-serif" font-size="30">Tea Gardens • Hills • Cool Air</text>
+</svg>

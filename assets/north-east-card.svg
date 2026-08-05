@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="North East travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cde9ff"/>
+      <stop offset="60%" stop-color="#7cc58f"/>
+      <stop offset="100%" stop-color="#2b6f55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 650 C190 560 430 570 650 620 C880 670 1090 690 1600 620 L1600 900 L0 900 Z" fill="#2f5e46"/>
+  <path d="M0 720 C220 680 510 700 760 740 C1080 790 1330 780 1600 735 L1600 900 L0 900 Z" fill="#224739"/>
+  <g fill="#f5f7f2" opacity="0.95">
+    <path d="M190 620 l90 -140 l90 140 z"/>
+    <path d="M330 640 l70 -115 l70 115 z"/>
+    <path d="M1280 610 l100 -150 l100 150 z"/>
+  </g>
+  <g fill="#f2d46b">
+    <circle cx="1060" cy="520" r="28"/>
+    <circle cx="1120" cy="560" r="28"/>
+    <circle cx="1008" cy="580" r="24"/>
+  </g>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">North East</text>
+  <text x="80" y="872" fill="#ecfff0" font-family="Arial, sans-serif" font-size="30">Mountains • Waterfalls • Culture</text>
+</svg>

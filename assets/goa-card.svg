@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Goa travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/>
+      <stop offset="70%" stop-color="#ff8c62"/>
+      <stop offset="100%" stop-color="#2856a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="240" cy="170" r="84" fill="#fff3cc" opacity="0.9"/>
+  <path d="M0 640 C220 600 420 620 620 650 C890 690 1140 690 1600 630 L1600 900 L0 900 Z" fill="#0c6b6f"/>
+  <path d="M0 700 C260 680 520 710 820 750 C1100 786 1330 780 1600 740 L1600 900 L0 900 Z" fill="#1d8ca0"/>
+  <path d="M120 635 C170 585 240 560 320 565 C392 570 446 615 490 664" stroke="#7a4d2a" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <circle cx="430" cy="595" r="14" fill="#7fd36f"/>
+  <circle cx="455" cy="620" r="14" fill="#7fd36f"/>
+  <circle cx="420" cy="640" r="14" fill="#7fd36f"/>
+  <path d="M1180 640 C1230 600 1300 590 1380 605 C1450 620 1500 650 1560 690" stroke="#f4d37a" stroke-width="28" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <rect x="0" y="0" width="1600" height="900" fill="none"/>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">Goa</text>
+  <text x="80" y="872" fill="#fff7ea" font-family="Arial, sans-serif" font-size="30">Beaches • Sunset • Nightlife</text>
+</svg>

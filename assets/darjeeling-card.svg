@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Darjeeling travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9b0"/>
+      <stop offset="55%" stop-color="#b8d7e8"/>
+      <stop offset="100%" stop-color="#5a7f9e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 650 C240 600 470 610 700 645 C940 680 1180 700 1600 650 L1600 900 L0 900 Z" fill="#4b6a43"/>
+  <path d="M0 710 C260 680 520 690 800 730 C1100 775 1360 770 1600 725 L1600 900 L0 900 Z" fill="#32513b"/>
+  <g fill="#f6f0df">
+    <path d="M220 620 l80 -120 l80 120 z"/>
+    <path d="M340 640 l80 -140 l80 140 z"/>
+    <path d="M1160 600 l90 -130 l90 130 z"/>
+  </g>
+  <path d="M960 760 C1040 710 1120 700 1220 708 C1300 715 1380 740 1460 770" stroke="#c8a25b" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">Darjeeling</text>
+  <text x="80" y="872" fill="#fff7ea" font-family="Arial, sans-serif" font-size="30">Tea Estates • Hills • Toy Train</text>
+</svg>

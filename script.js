@@ -1,4 +1,11 @@
 const destinations = [
+  { name: "Kerala", type: "domestic", about: "Backwaters, hill stations & calm coastal escapes", image: "assets/kerala-photo.jpg" },
+  { name: "Kashmir", type: "domestic", about: "Snowy peaks, shikara rides & scenic valleys", image: "assets/kashmir-photo.jpg" },
+  { name: "North East", type: "domestic", about: "Lush mountains, waterfalls & rich local culture", image: "assets/north-east-photo.jpg" },
+  { name: "Goa", type: "domestic", about: "Beaches, nightlife & relaxed holiday vibes", image: "assets/goa-photo.jpg" },
+  { name: "Ooty", type: "domestic", about: "Tea gardens, cool weather & scenic hill drives", image: "assets/ooty-photo.jpg" },
+  { name: "Andaman", type: "domestic", about: "Blue waters, island hopping & beach escapes", image: "assets/andaman-photo.jpg" },
+  { name: "Darjeeling", type: "domestic", about: "Toy train charm, tea estates & Himalayan views", image: "assets/darjeeling-photo.jpg" },
   { name: "Paris", type: "international", about: "Romantic streets, icons & luxury stays", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85" },
   { name: "Dubai", type: "international", about: "Skyline, desert escapes & premium shopping", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85" },
   { name: "Santorini", type: "international", about: "Clifftop sunsets, whitewashed views & calm seas", image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85" },
@@ -27,7 +34,7 @@ function render() {
   const query = search.value.trim().toLowerCase();
   const items = destinations.filter(destination => (filter === "all" || destination.type === filter) && `${destination.name} ${destination.about}`.toLowerCase().includes(query));
   count.textContent = `${items.length} popular destination${items.length === 1 ? "" : "s"}`;
-  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" loading="lazy"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
+  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" loading="lazy" onerror="this.onerror=null;this.src='assets/travel-services-hero.png'"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
 }
 
 function openModal(service = "Holiday package") {

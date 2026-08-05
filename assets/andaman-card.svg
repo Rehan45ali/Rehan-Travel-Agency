@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Andaman travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a7e8ff"/>
+      <stop offset="55%" stop-color="#4cc0de"/>
+      <stop offset="100%" stop-color="#0f6d8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="250" cy="150" r="82" fill="#fff4cf" opacity="0.95"/>
+  <path d="M0 650 C220 600 430 615 680 650 C910 684 1160 700 1600 660 L1600 900 L0 900 Z" fill="#115a66"/>
+  <path d="M0 720 C240 700 520 715 780 750 C1100 793 1360 790 1600 750 L1600 900 L0 900 Z" fill="#0d3f57"/>
+  <ellipse cx="1160" cy="650" rx="190" ry="38" fill="#fff6d8" opacity="0.28"/>
+  <path d="M1120 640 h180 l30 28 h-240 z" fill="#d9a15b"/>
+  <path d="M1140 612 h140 l22 28 h-184 z" fill="#f4cf8a"/>
+  <rect x="0" y="0" width="1600" height="900" fill="none"/>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">Andaman</text>
+  <text x="80" y="872" fill="#e8fbff" font-family="Arial, sans-serif" font-size="30">Islands • Blue Water • Beaches</text>
+</svg>

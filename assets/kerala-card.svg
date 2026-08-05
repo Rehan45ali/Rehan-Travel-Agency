@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Kerala travel illustration">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6d7a7"/>
+      <stop offset="55%" stop-color="#6fc4cf"/>
+      <stop offset="100%" stop-color="#1f6f78"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2f9fb0"/>
+      <stop offset="100%" stop-color="#0f5d6d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="240" cy="160" r="78" fill="#fff4d6" opacity="0.9"/>
+  <path d="M0 620 C240 560 420 590 620 620 C870 660 1080 650 1600 600 L1600 900 L0 900 Z" fill="#2f7d5b"/>
+  <path d="M0 670 C260 630 500 670 760 705 C1060 750 1290 730 1600 680 L1600 900 L0 900 Z" fill="url(#water)"/>
+  <ellipse cx="1080" cy="720" rx="250" ry="54" fill="#ffffff" opacity="0.12"/>
+  <path d="M920 675 h300 l40 40 h-380 z" fill="#6b4528"/>
+  <path d="M970 635 h200 l28 40 h-260 z" fill="#8b5a34"/>
+  <rect x="980" y="603" width="180" height="34" rx="10" fill="#f6e3be"/>
+  <path d="M760 860 C820 780 860 770 930 780 C980 788 1025 820 1085 860 Z" fill="#f2c25c"/>
+  <path d="M1090 860 C1150 790 1210 776 1275 788 C1338 800 1388 832 1440 860 Z" fill="#f1b84a"/>
+  <g fill="#1d7a54">
+    <path d="M145 600 l40 -110 l40 110 z"/>
+    <path d="M220 610 l55 -130 l55 130 z"/>
+    <path d="M1320 610 l45 -120 l45 120 z"/>
+    <path d="M1390 620 l58 -140 l58 140 z"/>
+  </g>
+  <text x="80" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">Kerala</text>
+  <text x="80" y="872" fill="#e8fff6" font-family="Arial, sans-serif" font-size="30">Backwaters • Hills • Coast</text>
+</svg>
