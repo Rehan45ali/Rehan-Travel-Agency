@@ -9,12 +9,20 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fonts: Sans (Poppins, Rubik, Nunito, Cabin), Display, Script, Handwritten -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@400;500;700&family=Nunito:wght@400;600&family=Cabin:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="3d.css">
-  <link rel="stylesheet" href="footer.css">
+
+  <!-- Asynchronous Google Fonts -->
+  <link rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" 
+        media="print" 
+        onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
+  </noscript>
+
+  <!-- Asynchronous Main Stylesheet -->
+  <link rel="preload" href="/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/main.css"></noscript>
+
   <style>
     :root{--navy:#0d2f4a;--deep:#041622;--teal:#17736d;--mint:#eef6f2;--gold:#d39a2e;--ink:#163044;--muted:#60717b;--line:#d7e4df}
     body{background:linear-gradient(180deg,#ffffff 0%,#f7faf8 46%,#eef5f1 100%);color:var(--ink);font-family:"Poppins",Arial,sans-serif}
