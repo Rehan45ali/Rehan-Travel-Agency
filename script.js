@@ -153,28 +153,21 @@ document.addEventListener('click', (e) => {
   window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 });
 
-// Visitor counter using the active CounterAPI endpoint with fallback
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.getElementById('visitor-count');
-  if (!el) return;
-  if (location.protocol === 'file:') {
-    el.textContent = 'N/A';
-    return;
-  }
-
-  fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
-    .then(res => res.json())
-    .then(data => {
-      if (data && typeof data.count !== 'undefined') {
-        el.textContent = Number(data.count).toLocaleString();
-      } else {
-        el.textContent = '1,000+';
-      }
-    })
-    .catch(() => {
-      el.textContent = '1,000+';
-    });
-});
+// Replace CountAPI logic with CounterAPI
+fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
+  .then(res => res.json())
+  .then(data => {
+    const visitorElement = document.getElementById('visitor-count');
+    if (visitorElement) {
+      visitorElement.textContent = data.count.toLocaleString();
+    }
+  })
+  .catch(() => {
+    const visitorElement = document.getElementById('visitor-count');
+    if (visitorElement) {
+      visitorElement.textContent = '1,000+'; // Graceful fallback
+    }
+  });
 
 // Inject overlay layers + Book Now button into all gallery figures (if not already present)
 document.addEventListener('DOMContentLoaded', () => {
