@@ -11,15 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="stylesheet" 
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=optional" 
         media="print" 
         onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=optional">
   </noscript>
 
   <link rel="preload" href="/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/main.css"></noscript>
+  <link rel="preload" href="assets/travel-services-hero.png" as="image" fetchpriority="high">
 
   <style>
     :root{--navy:#0d2f4a;--deep:#041622;--teal:#17736d;--mint:#eef6f2;--gold:#d39a2e;--ink:#163044;--muted:#60717b;--line:#d7e4df}
@@ -49,7 +50,7 @@
     .hero-stats strong{display:block;font-size:24px;line-height:1.1;color:#fff}
     .hero-stats span{display:block;margin-top:6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d4e4e4}
     .hero-floating{position:absolute;right:5vw;bottom:84px;width:min(360px,32vw);padding:18px;border:1px solid rgba(255,255,255,.16);border-radius:28px;background:rgba(7,24,38,.5);backdrop-filter:blur(14px);box-shadow:0 30px 80px rgba(0,0,0,.24);animation:floatCard 6s ease-in-out infinite}
-    .hero-floating img{display:block;width:100%;height:250px;object-fit:cover;border-radius:20px}
+    .hero-floating img{display:block;width:100%;height:250px;aspect-ratio:16/10;object-fit:cover;border-radius:20px}
     .hero-floating .floating-copy{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding:16px 4px 2px;color:#fff}
     .hero-floating .floating-copy strong{display:block;font-size:15px}
     .hero-floating .floating-copy span{display:block;margin-top:4px;color:#cde0e0;font-size:13px;line-height:1.5}
@@ -85,7 +86,7 @@
     .contact-cta .cta-inner{position:relative;z-index:1}
     .contact-cta .button{background:#fff;color:var(--navy)}
     .footer-inner{align-items:flex-start}
-    .footer-info p,.footer-info address{font-family:"Plus Jakarta Sans",sans-serif}
+    .footer-info p,.footer-info address{font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif}
     .footer-info p{color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
     .footer-info address{color:var(--ink);font-style:normal;font-size:15px;line-height:1.7;max-width:380px}
     .footer-actions a{background:var(--navy);color:#fff;border-radius:999px;padding:14px 18px;box-shadow:0 16px 30px rgba(13,47,74,.2)}
@@ -105,7 +106,7 @@
   <header class="site-header" id="top">
     <div class="top-strip"><div class="shell top-strip-inner"><span>Personal travel help for every journey.</span><a href="tel:+918178054327">Call +91 81780 54327</a></div></div>
     <div class="shell nav-wrap">
-      <a class="brand" href="#top"><img src="assets/rehan-logo-circle.png" alt="Rehan Travel Agency"></a>
+      <a class="brand" href="#top"><img src="assets/rehan-logo-circle.webp" alt="Rehan Travel Agency" width="75" height="75" loading="eager" fetchpriority="high" style="aspect-ratio: 1 / 1; width: 75px; height: 75px;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
       <nav class="site-nav"><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#contact">Contact</a><button type="button" class="nav-cta" data-open-query>Quick enquiry ↗</button></nav>
     </div>

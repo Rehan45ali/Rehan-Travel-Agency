@@ -34,7 +34,7 @@ function render() {
   const query = search.value.trim().toLowerCase();
   const items = destinations.filter(destination => (filter === "all" || destination.type === filter) && `${destination.name} ${destination.about}`.toLowerCase().includes(query));
   count.textContent = `${items.length} popular destination${items.length === 1 ? "" : "s"}`;
-  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" loading="lazy" onerror="this.onerror=null;this.src='assets/travel-services-hero.png'"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
+  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" width="600" height="400" loading="lazy" style="aspect-ratio: 3 / 2; width: 100%; height: auto;" onerror="this.onerror=null;this.src='assets/travel-services-hero.png'"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
 }
 
 function openModal(service = "Holiday package") {
@@ -103,44 +103,28 @@ render();
 (function(){
   const heroContent = document.querySelector('.hero-content');
   const gallery = document.querySelector('.gallery-track');
-  let mouseX = 0, mouseY = 0;
+  let mouseX = 0, mouseY = 0, framePending = false;
 
   function onMove(e){
     const cx = (e.clientX ?? (e.touches && e.touches[0].clientX)) - window.innerWidth/2;
     const cy = (e.clientY ?? (e.touches && e.touches[0].clientY)) - window.innerHeight/2;
     mouseX = cx; mouseY = cy;
+    if (!framePending) {
+      framePending = true;
+      requestAnimationFrame(update);
+    }
   }
 
   function update(){
+    framePending = false;
     const ry = (mouseX / window.innerWidth) * 12; // rotateY
     const rx = (mouseY / window.innerHeight) * -8; // rotateX
     if (heroContent) heroContent.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     if (gallery) gallery.style.transform = `translateX(${-(mouseX/60)}px) translateY(${-(mouseY/120)}px) rotateY(${ry/3}deg)`;
     if (routeForm) routeForm.style.transform = `rotateX(${rx/3}deg) rotateY(${ry/3}deg)`;
-    requestAnimationFrame(update);
   }
 
   window.addEventListener('pointermove', onMove, {passive:true});
-  requestAnimationFrame(update);
-
-  // Per-card tilt on pointer move + reset on leave
-  document.addEventListener('pointermove', (e) => {
-    if (!(e.target instanceof Element)) return;
-    const card = e.target.closest('.destination-card');
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const dx = (e.clientX - (rect.left + rect.width/2)) / rect.width;
-    const dy = (e.clientY - (rect.top + rect.height/2)) / rect.height;
-    const ry = dx * 8; const rx = dy * -8;
-    card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-  }, {passive:true});
-
-  document.addEventListener('pointerleave', (e) => {
-    if (!(e.target instanceof Element)) return;
-    const card = e.target.closest('.destination-card');
-    if (!card) return;
-    card.style.transform = '';
-  }, true);
 })();
 
 // Handle Book Now overlay clicks in the service gallery
@@ -153,17 +137,25 @@ document.addEventListener('click', (e) => {
   window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 });
 
-// WORKING REPLACEMENT
-fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
-  .then(res => res.json())
-  .then(data => {
-    const el = document.getElementById('visitor-count');
-    if (el) el.textContent = data.count.toLocaleString();
-  })
-  .catch(() => {
-    const el = document.getElementById('visitor-count');
-    if (el) el.textContent = '1,000+'; // Fallback if network drops
-  });
+// Defer non-critical visitor tracking until the initial render is idle.
+function updateVisitorCount() {
+  fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
+    .then(res => res.json())
+    .then(data => {
+      const el = document.getElementById('visitor-count');
+      if (el) el.textContent = data.count.toLocaleString();
+    })
+    .catch(() => {
+      const el = document.getElementById('visitor-count');
+      if (el) el.textContent = '1,000+';
+    });
+}
+
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(updateVisitorCount, { timeout: 3000 });
+} else {
+  setTimeout(updateVisitorCount, 2000);
+}
 
 // Inject overlay layers + Book Now button into all gallery figures (if not already present)
 document.addEventListener('DOMContentLoaded', () => {
