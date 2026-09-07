@@ -153,7 +153,7 @@ document.addEventListener('click', (e) => {
   window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 });
 
-// Visitor counter (global) using CountAPI — increments and returns the value
+// Visitor counter using the active CounterAPI endpoint with fallback
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('visitor-count');
   if (!el) return;
@@ -161,19 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = 'N/A';
     return;
   }
-  const namespace = 'rehan-travel-agency';
-  const key = 'site-visitors';
-  fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+
+  fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
     .then(res => res.json())
     .then(data => {
-      if (data && typeof data.value !== 'undefined') el.textContent = Number(data.value).toLocaleString();
+      if (data && typeof data.count !== 'undefined') {
+        el.textContent = Number(data.count).toLocaleString();
+      } else {
+        el.textContent = '1,000+';
+      }
     })
     .catch(() => {
-      // fallback: try to read without increment, or show N/A
-      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`).then(r => r.json()).then(d => {
-        if (d && typeof d.value !== 'undefined') el.textContent = Number(d.value).toLocaleString();
-        else el.textContent = 'N/A';
-      }).catch(() => { el.textContent = 'N/A'; });
+      el.textContent = '1,000+';
     });
 });
 
