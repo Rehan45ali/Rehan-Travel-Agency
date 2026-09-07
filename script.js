@@ -30,11 +30,19 @@ const nav = document.querySelector(".site-nav");
 const toggle = document.querySelector(".nav-toggle");
 let filter = "all";
 
+function scheduleIdle(callback) {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(callback, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', () => setTimeout(callback, 1000), { once: true });
+  }
+}
+
 function render() {
   const query = search.value.trim().toLowerCase();
   const items = destinations.filter(destination => (filter === "all" || destination.type === filter) && `${destination.name} ${destination.about}`.toLowerCase().includes(query));
   count.textContent = `${items.length} popular destination${items.length === 1 ? "" : "s"}`;
-  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" width="600" height="400" loading="lazy" style="aspect-ratio: 3 / 2; width: 100%; height: auto;" onerror="this.onerror=null;this.src='assets/travel-services-hero.png'"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
+  grid.innerHTML = items.length ? items.map(destination => `<article class="destination-card"><img src="${destination.image}" alt="${destination.name}" width="600" height="400" loading="lazy" style="aspect-ratio: 3 / 2; width: 100%; height: auto;" onerror="this.onerror=null;this.src='assets/travel-services-hero.webp'"><div class="destination-body"><span class="destination-type">${destination.type}</span><h3>${destination.name}</h3><p>${destination.about}</p><button data-book="${destination.name}">Book Now ↗</button></div></article>`).join("") : "<p>No destination found. Send us a custom request on WhatsApp.</p>";
 }
 
 function openModal(service = "Holiday package") {
@@ -97,10 +105,10 @@ if (toggle) {
   nav.querySelectorAll("a,button").forEach(item => item.addEventListener("click", () => nav.classList.remove("is-open")));
 }
 
-render();
+scheduleIdle(render);
 
 /* 3D parallax & tilt enhancements */
-(function(){
+scheduleIdle(() => (function(){
   const heroContent = document.querySelector('.hero-content');
   const gallery = document.querySelector('.gallery-track');
   let mouseX = 0, mouseY = 0, framePending = false;
@@ -125,7 +133,7 @@ render();
   }
 
   window.addEventListener('pointermove', onMove, {passive:true});
-})();
+})());
 
 // Handle Book Now overlay clicks in the service gallery
 document.addEventListener('click', (e) => {
@@ -151,14 +159,10 @@ function updateVisitorCount() {
     });
 }
 
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(updateVisitorCount, { timeout: 3000 });
-} else {
-  setTimeout(updateVisitorCount, 2000);
-}
+scheduleIdle(updateVisitorCount);
 
 // Inject overlay layers + Book Now button into all gallery figures (if not already present)
-document.addEventListener('DOMContentLoaded', () => {
+scheduleIdle(() => {
   const figures = document.querySelectorAll('.gallery-track > figure');
   figures.forEach(fig => {
     if (fig.querySelector('.overlay-layers')) return; // already injected

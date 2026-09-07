@@ -9,6 +9,8 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v8/L0xYDF4xlVxdOxwb5E24_w.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" 
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=optional" 
@@ -20,7 +22,7 @@
 
   <link rel="preload" href="/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/main.css"></noscript>
-  <link rel="preload" href="assets/travel-services-hero.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/travel-services-hero.webp" as="image" fetchpriority="high">
 
   <style>
     :root{--navy:#0d2f4a;--deep:#041622;--teal:#17736d;--mint:#eef6f2;--gold:#d39a2e;--ink:#163044;--muted:#60717b;--line:#d7e4df}
@@ -29,7 +31,7 @@
       radial-gradient(circle at 18% 18%,rgba(23,115,109,.18),transparent 28%),
       radial-gradient(circle at 82% 16%,rgba(211,154,46,.16),transparent 22%),
       linear-gradient(135deg,rgba(5,24,38,.92),rgba(12,54,74,.88) 52%,rgba(21,104,103,.74)),
-      url("assets/travel-services-hero.png") center/cover;}
+      url("assets/travel-services-hero.webp") center/cover;}
     .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
     .hero::before{width:420px;height:420px;right:-120px;top:-80px;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,0) 68%);animation:floatGlow 10s ease-in-out infinite}
     .hero::after{width:260px;height:260px;left:-60px;bottom:-90px;background:radial-gradient(circle,rgba(211,154,46,.14),rgba(211,154,46,0) 70%);animation:floatGlow 12s ease-in-out infinite reverse}
@@ -112,7 +114,7 @@
     </div>
   </header>
   <main>
-    <section class="hero"><div class="hero-shade"></div><div class="shell hero-content"><p class="hero-badge">WORLD TRAVEL CURATION • FAST QUOTES • PERSONAL SUPPORT</p><h1>Luxury travel.<br><em>Made simple.</em></h1><p>From flights and stays to complete holiday planning, we create smooth, stylish trips with the right options for your budget, timing and destination.</p><div class="hero-actions"><a href="#destinations" class="button button-gold">Explore world destinations ↓</a><button type="button" class="button button-light" data-open-query>Get a quote</button></div><div class="hero-stats"><div><strong>24/7</strong><span>Booking support</span></div><div><strong>100+</strong><span>Trip ideas</span></div><div><strong>5★</strong><span>Service focus</span></div></div></div><aside class="hero-floating" aria-label="Featured travel highlight"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Luxury world destination" loading="lazy"><div class="floating-copy"><div><strong>Signature escapes</strong><span>Handpicked routes, premium stays and polished itineraries for memorable travel.</span></div><span class="floating-tag">Premium</span></div></aside></section>
+    <section class="hero"><div class="hero-shade"></div><div class="shell hero-content"><p class="hero-badge">WORLD TRAVEL CURATION • FAST QUOTES • PERSONAL SUPPORT</p><h1>Luxury travel.<br><em>Made simple.</em></h1><p>From flights and stays to complete holiday planning, we create smooth, stylish trips with the right options for your budget, timing and destination.</p><div class="hero-actions"><a href="#destinations" class="button button-gold">Explore world destinations ↓</a><button type="button" class="button button-light" data-open-query>Get a quote</button></div><div class="hero-stats"><div><strong>24/7</strong><span>Booking support</span></div><div><strong>100+</strong><span>Trip ideas</span></div><div><strong>5★</strong><span>Service focus</span></div></div></div><aside class="hero-floating" aria-label="Featured travel highlight"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=500&amp;q=60&amp;fm=webp" srcset="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=500&amp;q=60&amp;fm=webp 500w, https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=800&amp;q=60&amp;fm=webp 800w" sizes="(max-width: 900px) calc(100vw - 48px), 360px" alt="Luxury world destination" width="800" height="500" loading="eager" fetchpriority="high"><div class="floating-copy"><div><strong>Signature escapes</strong><span>Handpicked routes, premium stays and polished itineraries for memorable travel.</span></div><span class="floating-tag">Premium</span></div></aside></section>
 
     <section class="service-intro shell" id="services">
       <div class="section-heading"><p class="eyebrow dark">HOW WE WORK</p><h2>Booking support built around your trip.</h2><p>Tell us where, when and how you want to travel. We’ll shortlist the best options, share practical combinations, and handle the follow-up.</p></div>
@@ -139,13 +141,13 @@
         </figure>
         <figure><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Bus and coach travel" loading="lazy"><figcaption>Bus &amp; coach</figcaption></figure>
         <figure><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Hotel booking" loading="lazy"><figcaption>Hotel booking</figcaption></figure>
-        <figure><img src="assets/travel-services-hero.png" alt="Holiday package planning" loading="lazy"><figcaption>Holiday packages</figcaption></figure>
+        <figure><img src="assets/travel-services-hero.webp" alt="Holiday package planning" loading="lazy"><figcaption>Holiday packages</figcaption></figure>
         <figure><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Visa assistance" loading="lazy"><figcaption>Visa assistance</figcaption></figure>
         <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="" loading="lazy"><figcaption>Flight booking</figcaption></figure>
         <figure aria-hidden="true"><img src="assets/service-railway.png" alt="" loading="lazy"><figcaption>Railway tickets</figcaption></figure>
         <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="" loading="lazy"><figcaption>Bus &amp; coach</figcaption></figure>
         <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="" loading="lazy"><figcaption>Hotel booking</figcaption></figure>
-        <figure aria-hidden="true"><img src="assets/travel-services-hero.png" alt="" loading="lazy"><figcaption>Holiday packages</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/travel-services-hero.webp" alt="" loading="lazy"><figcaption>Holiday packages</figcaption></figure>
         <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="" loading="lazy"><figcaption>Visa assistance</figcaption></figure>
       </div></div>
     </section>
@@ -155,7 +157,7 @@
   </main>
   <footer>
     <div class="shell footer-inner">
-      <img src="assets/rehan-logo-circle.png" alt="Rehan Travel Agency">
+      <img src="assets/rehan-logo-circle.webp" alt="Rehan Travel Agency" width="88" height="43" loading="lazy">
       <div class="footer-info">
         <p>Flights · Trains · Buses · Hotels · Holidays · Visa Assistance</p>
         <address>A158/5, HARIOM APPT. SHALIMAR GARDEN EXT 2<br>GHAZIABAD, UTTAR PRADESH</address>
@@ -168,6 +170,6 @@
   </footer>
   
   <div class="modal" id="query-modal" aria-hidden="true"><div class="modal-backdrop" data-close-query></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close" type="button" data-close-query aria-label="Close">×</button><p class="eyebrow dark">QUICK ENQUIRY</p><h2 id="modal-title">Where would you like to go?</h2><p>Fill the details below and we’ll open WhatsApp with your request.</p><form id="query-form"><label>Your name<input name="name" required placeholder="Name"></label><label>Phone number<input name="phone" required inputmode="tel" placeholder="Phone number"></label><label>Service<select id="query-service" name="service"><option>Holiday package</option><option>Flight booking</option><option>Railway ticket booking</option><option>Bus and coach booking</option><option>Hotel booking</option><option>Visa assistance</option></select></label><div class="form-row"><label>Origin city<input name="origin" placeholder="Where are you travelling from?"></label><label>Destination city<input name="destination" placeholder="Where do you want to go?"></label></div><label>Travellers<select name="travellers"><option>1 Traveller</option><option>2 Travellers</option><option>3–4 Travellers</option><option>5+ Travellers</option></select></label><label>Message<textarea name="message" rows="3" placeholder="Travel date or anything else we should know"></textarea></label><button type="submit">Continue on WhatsApp ↗</button></form></div></div>
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=11" defer></script>
 </body>
 </html>
