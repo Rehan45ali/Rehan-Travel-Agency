@@ -153,20 +153,16 @@ document.addEventListener('click', (e) => {
   window.open(`https://wa.me/918178054327?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 });
 
-// Replace CountAPI logic with CounterAPI
+// WORKING REPLACEMENT
 fetch('https://counterapi.dev/v1/rehan-travel-agency/site-visitors/up')
   .then(res => res.json())
   .then(data => {
-    const visitorElement = document.getElementById('visitor-count');
-    if (visitorElement) {
-      visitorElement.textContent = data.count.toLocaleString();
-    }
+    const el = document.getElementById('visitor-count');
+    if (el) el.textContent = data.count.toLocaleString();
   })
   .catch(() => {
-    const visitorElement = document.getElementById('visitor-count');
-    if (visitorElement) {
-      visitorElement.textContent = '1,000+'; // Graceful fallback
-    }
+    const el = document.getElementById('visitor-count');
+    if (el) el.textContent = '1,000+'; // Fallback if network drops
   });
 
 // Inject overlay layers + Book Now button into all gallery figures (if not already present)
