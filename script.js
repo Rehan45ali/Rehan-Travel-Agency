@@ -170,7 +170,7 @@ scheduleIdle(() => {
     const caption = fig.querySelector('figcaption')?.textContent?.trim() || img?.alt || 'Service';
     const overlay = document.createElement('div');
     overlay.className = 'overlay-layers';
-    overlay.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'false');
     overlay.innerHTML = `
       <div class="layer layer-back"></div>
       <div class="layer layer-front"></div>
