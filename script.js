@@ -165,7 +165,7 @@ scheduleIdle(updateVisitorCount);
 scheduleIdle(() => {
   const figures = document.querySelectorAll('.gallery-track > figure');
   figures.forEach(fig => {
-    if (fig.querySelector('.overlay-layers')) return; // already injected
+    if (fig.getAttribute('aria-hidden') === 'true' || fig.querySelector('.overlay-layers')) return; // decorative copies stay out of the accessibility tree
     const img = fig.querySelector('img');
     const caption = fig.querySelector('figcaption')?.textContent?.trim() || img?.alt || 'Service';
     const overlay = document.createElement('div');

@@ -125,6 +125,11 @@ section.hero{min-height:80vh}
 footer,footer p,footer address{color:#fff !important;opacity:1 !important}
 footer a{color:#fff !important;text-decoration:underline}
 
+/* Reserve geometry before deferred content and fonts are ready. */
+.destination-grid{min-height:760px}
+.destination-grid:empty{min-height:760px}
+.destination-count{min-height:22px}
+
 /* Use the compressed hero asset in the active bundled stylesheet. */
 section.hero{background-image:url("assets/travel-services-hero.webp")}
 footer a{color:#fff !important;text-decoration:underline}
