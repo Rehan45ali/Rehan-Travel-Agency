@@ -113,7 +113,8 @@ section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:1px 400
 
 /* Reserve stable geometry for the page shell and media before fonts/images load. */
 html{scrollbar-gutter:stable}
-header,nav{min-height:70px;contain:layout size}
+header{min-height:70px;contain:layout}
+nav{min-height:70px;contain:layout}
 .site-header{min-height:110px}
 main img{width:100%;height:auto;aspect-ratio:3 / 2}
 section.hero{min-height:80vh}
