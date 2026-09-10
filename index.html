@@ -87,6 +87,52 @@
     .contact-cta .eyebrow{opacity:.82}
     .contact-cta .cta-inner{position:relative;z-index:1}
     .contact-cta .button{background:#fff;color:var(--navy)}
+    .about-section{padding:92px 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:64px;align-items:center}
+    .about-copy h2,.blog-section h2,.faq-section h2{font-family:"Playfair Display",Georgia,serif;color:var(--navy);font-size:clamp(38px,4.4vw,58px);line-height:1.04;margin:12px 0 18px}
+    .about-copy>p:not(.eyebrow){color:var(--muted);font-size:16px;line-height:1.85;max-width:620px}
+    .about-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:26px 0 0;padding:0;list-style:none}
+    .about-points li{padding:16px 18px;border-left:3px solid var(--gold);background:var(--mint);color:var(--ink);font-size:13px;line-height:1.55}
+    .about-visual{position:relative;min-height:440px;padding:18px;border-radius:30px;background:linear-gradient(145deg,#e7f1ed,#fff);box-shadow:0 26px 70px rgba(6,43,69,.12)}
+    .about-visual img{display:block;width:100%;height:404px;object-fit:cover;border-radius:22px}
+    .about-stamp{position:absolute;right:-18px;bottom:28px;max-width:190px;padding:18px 20px;border-radius:18px;background:var(--navy);color:#fff;box-shadow:0 18px 34px rgba(6,43,69,.22);font-size:13px;line-height:1.55}
+    .about-stamp strong{display:block;color:#f6d38a;font-family:"Playfair Display",Georgia,serif;font-size:28px;line-height:1;margin-bottom:6px}
+    .blog-section{padding:94px 0;background:linear-gradient(180deg,#f7faf8 0,#eef5f1 100%)}
+    .blog-heading,.faq-heading{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}
+    .blog-heading>p,.faq-heading>p{max-width:430px;color:var(--muted);line-height:1.7;margin:0}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .blog-card{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 16px 38px rgba(6,43,69,.06);transition:transform .25s ease,box-shadow .25s ease}
+    .blog-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(6,43,69,.12)}
+    .blog-card img{display:block;width:100%;height:210px;object-fit:cover}
+    .blog-card-body{padding:22px 22px 24px}
+    .blog-meta{display:flex;justify-content:space-between;gap:12px;color:var(--teal);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .blog-card h3{margin:12px 0 10px;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:25px;line-height:1.12}
+    .blog-card p{color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:16px}
+    .blog-card a{color:var(--navy);font-size:12px;font-weight:700;text-decoration:none}
+    .faq-section{padding:94px 0;background:#fff}
+    .faq-grid{display:grid;grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:64px;align-items:start}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq-list details{border-bottom:1px solid var(--line)}
+    .faq-list summary{display:flex;justify-content:space-between;gap:22px;align-items:center;padding:22px 2px;color:var(--navy);font-weight:700;cursor:pointer;list-style:none}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary::after{content:"+";font-size:24px;font-weight:400;color:var(--teal);transition:transform .2s ease}
+    .faq-list details[open] summary::after{content:"-"}
+    .faq-list details p{max-width:700px;padding:0 40px 22px 2px;color:var(--muted);font-size:14px;line-height:1.75}
+    @media (max-width:900px){
+      .about-grid,.faq-grid{grid-template-columns:1fr;gap:36px}
+      .about-visual{max-width:680px}
+      .blog-grid{grid-template-columns:1fr 1fr}
+      .faq-grid{gap:20px}
+    }
+    @media (max-width:620px){
+      .about-section,.blog-section,.faq-section{padding:68px 0}
+      .about-points,.blog-grid{grid-template-columns:1fr}
+      .blog-heading,.faq-heading{display:block}
+      .blog-heading>p,.faq-heading>p{margin-top:14px}
+      .about-visual{min-height:0;padding:10px}
+      .about-visual img{height:320px}
+      .about-stamp{right:12px;bottom:18px}
+    }
     .footer-inner{align-items:flex-start}
     .footer-info p,.footer-info address{font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif}
     .footer-info p{color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
@@ -110,7 +156,7 @@
     <div class="shell nav-wrap">
       <a class="brand" href="#top"><img src="assets/rehan-logo-circle.webp" alt="Rehan Travel Agency" width="75" height="75" loading="eager" fetchpriority="high" style="aspect-ratio: 1 / 1; width: 75px; height: 75px;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
-      <nav class="site-nav"><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#contact">Contact</a><button type="button" class="nav-cta" data-open-query>Quick enquiry ↗</button></nav>
+      <nav class="site-nav"><a href="#about">About</a><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#travel-notes">Travel notes</a><a href="#contact">Contact</a><button type="button" class="nav-cta" data-open-query>Quick enquiry ↗</button></nav>
     </div>
   </header>
   <main>
@@ -124,6 +170,13 @@
         <article><span>03</span><div class="service-icon">→</div><h3>Confirm &amp; travel</h3><p>Approve the option you like and we continue with tickets, stays and updates.</p></article>
       </div>
       <div class="service-highlights" aria-label="Travel planning highlights"><span><strong>Fast replies</strong> on WhatsApp</span><span><strong>Flexible routes</strong> for every budget</span><span><strong>Personal help</strong> from enquiry to booking</span></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="shell about-grid">
+        <div class="about-copy"><p class="eyebrow dark">ABOUT REHAN TRAVEL AGENCY</p><h2>Travel planning with a human touch.</h2><p>We help travellers turn a rough idea into a well-organised journey. Based in Ghaziabad, our team brings together practical booking support, thoughtful recommendations and clear communication from the first message to the day you travel.</p><ul class="about-points"><li><strong>Local understanding</strong><br>Advice that starts with your real route, budget and schedule.</li><li><strong>One helpful contact</strong><br>Flights, stays, rail, buses and holidays in one conversation.</li><li><strong>Clear options</strong><br>Simple comparisons without pressure or confusing jargon.</li><li><strong>After-booking care</strong><br>Support when plans change or you need a quick answer.</li></ul></div>
+        <div class="about-visual"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Traveller looking across a scenic landscape" width="1100" height="733" loading="lazy"><div class="about-stamp"><strong>One journey</strong> carefully planned around you, not a template.</div></div>
+      </div>
     </section>
 
     <section class="service-gallery" aria-label="Travel services photo gallery">
@@ -153,6 +206,20 @@
     </section>
 
     <section class="destination-section" id="destinations"><div class="shell"><div class="section-heading destination-heading"><div><p class="eyebrow dark">WORLD DESTINATIONS</p><h2>Iconic places, premium visuals.</h2></div><p>Explore a curated mix of globally loved destinations with stronger imagery and a cleaner booking flow.</p></div><div class="destination-tools"><input id="destination-search" type="search" placeholder="Search Paris, Maldives, Tokyo…"><div class="filter-pills"><button class="is-active" data-filter="all">All</button><button data-filter="domestic">Domestic</button><button data-filter="international">International</button></div></div><p id="destination-count" class="destination-count"></p><div id="destination-grid" class="destination-grid" aria-live="polite"></div></div></section>
+
+    <section class="blog-section" id="travel-notes">
+      <div class="shell"><div class="blog-heading"><div><p class="eyebrow dark">TRAVEL NOTES</p><h2>Useful ideas before you go.</h2></div><p>Short, practical reads to help you choose a destination, plan your budget and make your next booking feel easier.</p></div>
+        <div class="blog-grid">
+          <article class="blog-card"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Mountain road through a scenic landscape" width="900" height="600" loading="lazy"><div class="blog-card-body"><div class="blog-meta"><span>Planning guide</span><span>5 min read</span></div><h3>How to choose the right holiday package</h3><p>Match the destination, pace, stay and inclusions to the kind of break you actually want.</p><a href="#contact">Plan this with us ↗</a></div></article>
+          <article class="blog-card"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Airplane wing above clouds" width="900" height="600" loading="lazy"><div class="blog-card-body"><div class="blog-meta"><span>Flight tips</span><span>4 min read</span></div><h3>Simple ways to make flight booking smoother</h3><p>Flexible dates, smart route comparisons and the details worth checking before you pay.</p><a href="#contact">Ask for flight options ↗</a></div></article>
+          <article class="blog-card"><img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Couple exploring a new destination" width="900" height="600" loading="lazy"><div class="blog-card-body"><div class="blog-meta"><span>Destination ideas</span><span>6 min read</span></div><h3>Domestic escapes worth planning this season</h3><p>From cool hill towns to quiet coastlines, find an Indian escape that fits your time.</p><a href="#destinations">Explore destinations ↗</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="shell faq-grid"><div class="faq-heading"><div><p class="eyebrow dark">FREQUENTLY ASKED QUESTIONS</p><h2>Good to know before you book.</h2></div><p>Still deciding? Send your route and dates through WhatsApp and we’ll help you work out the next step.</p></div><div class="faq-list"><details open><summary>What travel services do you provide?</summary><p>We help with flight, railway and bus tickets, hotel bookings, holiday packages and visa assistance. You can ask for one service or a complete trip plan.</p></details><details><summary>Can you plan a trip around my budget?</summary><p>Yes. Share your approximate budget, dates, traveller count and preferences. We’ll compare suitable routes and stays so you can choose confidently.</p></details><details><summary>How do I request a quote?</summary><p>Use any “Get a quote” or “Quick enquiry” button, or message us directly on WhatsApp. Include your origin, destination and travel dates if you have them.</p></details><details><summary>Can I change my booking after confirmation?</summary><p>Change and cancellation rules depend on the airline, railway, hotel or package provider. Contact us as soon as your plans change and we’ll explain the available options.</p></details><details><summary>Do you support international travel and visas?</summary><p>We can help you explore international routes and provide visa assistance. Requirements vary by passport and destination, so we’ll guide you on the current document checklist for your trip.</p></details></div></div>
+    </section>
     <section class="contact-cta" id="contact"><div class="shell cta-inner"><div><p class="eyebrow">LET’S PLAN YOUR JOURNEY</p><h2>Want options tailored to you?</h2><p>Tell us your route, dates and traveller count. We’ll continue the conversation on WhatsApp.</p></div><button type="button" class="button button-gold" data-open-query>Send travel enquiry ↗</button></div></section>
   </main>
   <footer>
