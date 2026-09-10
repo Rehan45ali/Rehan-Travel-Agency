@@ -20,6 +20,11 @@ const grid = document.querySelector("#destination-grid");
 const search = document.querySelector("#destination-search");
 const count = document.querySelector("#destination-count");
 const modal = document.querySelector("#query-modal");
+const articleModal = document.querySelector("#article-modal");
+const articleCategory = document.querySelector("#article-category");
+const articleTitle = document.querySelector("#article-title");
+const articleIntro = document.querySelector("#article-intro");
+const articleCopy = document.querySelector("#article-copy");
 const form = document.querySelector("#query-form");
 const serviceSelect = document.querySelector("#query-service");
 const routeForm = document.querySelector("#service-route");
@@ -29,6 +34,27 @@ const routeDestination = document.querySelector("#route-destination");
 const nav = document.querySelector(".site-nav");
 const toggle = document.querySelector(".nav-toggle");
 let filter = "all";
+
+const articles = {
+  package: {
+    category: "Planning guide · 5 min read",
+    title: "How to choose the right holiday package",
+    intro: "A good package should make your trip easier, not squeeze you into someone else's schedule.",
+    copy: "<p>Start with the feeling you want from the trip: a relaxed beach break, a packed sightseeing holiday, or a slower cultural escape. Then compare the number of nights, hotel location, transfers and meals instead of looking only at the headline price.</p><p>Check what is included and what is not, especially airport transfers, activities, local transport and cancellation terms. Share your dates, budget and preferred pace with our team and we can shortlist options that fit the way you actually want to travel.</p>"
+  },
+  flight: {
+    category: "Flight tips · 4 min read",
+    title: "Simple ways to make flight booking smoother",
+    intro: "A few details checked before payment can save time, money and stress later.",
+    copy: "<p>Keep a little flexibility around your departure date if possible. Comparing nearby airports, one-stop routes and different departure times can reveal better combinations without changing the destination.</p><p>Before confirming, check baggage allowance, airport terminals, layover duration, name spelling and change rules. Send us your origin, destination and preferred dates and we will compare practical options for you.</p>"
+  },
+  domestic: {
+    category: "Destination ideas · 6 min read",
+    title: "Domestic escapes worth planning this season",
+    intro: "India has an escape for every kind of break, from cool hills to slow coastal mornings.",
+    copy: "<p>For a short reset, choose a destination with simple connections and keep the itinerary focused on one region. Hill stays in Kashmir, Ooty or Darjeeling work well for scenic days, while Goa and Andaman suit travellers looking for sun and water.</p><p>Leave room for local food, weather changes and unplanned stops. Tell us how many days you have and whether you prefer nature, beaches, culture or family-friendly activities, and we will help shape the route.</p>"
+  }
+};
 
 function scheduleIdle(callback) {
   if ('requestIdleCallback' in window) {
@@ -59,6 +85,26 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
+function openArticle(articleId) {
+  const article = articles[articleId];
+  if (!article || !articleModal) return;
+  articleCategory.textContent = article.category;
+  articleTitle.textContent = article.title;
+  articleIntro.textContent = article.intro;
+  articleCopy.innerHTML = article.copy;
+  articleModal.classList.add("is-open");
+  articleModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  articleModal.querySelector(".article-close").focus();
+}
+
+function closeArticle() {
+  if (!articleModal) return;
+  articleModal.classList.remove("is-open");
+  articleModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
 if (routeForm) {
   routeForm.addEventListener("submit", event => {
     event.preventDefault();
@@ -86,7 +132,13 @@ grid.addEventListener("click", event => {
 document.querySelectorAll("[data-open-query]").forEach(button => button.addEventListener("click", () => openModal()));
 document.querySelectorAll("[data-service]").forEach(button => button.addEventListener("click", () => openModal(button.dataset.service)));
 document.querySelectorAll("[data-close-query]").forEach(button => button.addEventListener("click", closeModal));
-document.addEventListener("keydown", event => { if (event.key === "Escape") closeModal(); });
+document.querySelectorAll("[data-article]").forEach(button => button.addEventListener("click", () => openArticle(button.dataset.article)));
+document.querySelectorAll("[data-close-article]").forEach(button => button.addEventListener("click", closeArticle));
+document.addEventListener("keydown", event => {
+  if (event.key !== "Escape") return;
+  if (articleModal?.classList.contains("is-open")) closeArticle();
+  else closeModal();
+});
 
 form.addEventListener("submit", event => {
   event.preventDefault();
