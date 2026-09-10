@@ -231,3 +231,54 @@ scheduleIdle(() => {
     fig.appendChild(overlay);
   });
 });
+
+// Ali provides quick answers from the site's travel services and hands detailed requests to WhatsApp.
+const aliChat = document.querySelector('#ali-chat');
+const aliPanel = document.querySelector('#ali-panel');
+const aliLauncher = document.querySelector('.ali-launcher');
+const aliClose = document.querySelector('.ali-close');
+const aliMessages = document.querySelector('#ali-messages');
+const aliForm = document.querySelector('#ali-form');
+const aliInput = document.querySelector('#ali-input');
+const aliReplies = [
+  { terms: ['service', 'offer', 'provide', 'help'], answer: 'We can help with flights, railway and bus tickets, hotels, holiday packages and visa assistance. Tell me your route and dates, and I can point you to the right next step.' },
+  { terms: ['book', 'booking', 'quote', 'enquiry'], answer: 'To get a quote, share your origin, destination, dates and traveller count. You can also use the enquiry form or continue with a travel expert on WhatsApp.' },
+  { terms: ['budget', 'cost', 'price', 'cheap'], answer: 'Yes, we can plan around your budget. Share an approximate amount, dates and the kind of trip you prefer, and the team can compare suitable options.' },
+  { terms: ['destination', 'suggest', 'where', 'trip'], answer: 'For beaches, consider Goa, Andaman or the Maldives. For hills, Kashmir, Ooty and Darjeeling are lovely. Tell me your travel month and I can narrow it down.' },
+  { terms: ['visa', 'passport'], answer: 'We provide visa assistance for international travel. Requirements depend on your passport and destination, so a travel expert should confirm the current checklist.' },
+  { terms: ['change', 'cancel', 'refund'], answer: 'Change and cancellation rules depend on the provider. Contact the team as soon as plans change so they can explain the options for your booking.' }
+];
+
+function toggleAli(open) {
+  const isOpen = open ?? !aliPanel.classList.contains('is-open');
+  aliPanel.classList.toggle('is-open', isOpen);
+  aliPanel.setAttribute('aria-hidden', String(!isOpen));
+  aliLauncher.setAttribute('aria-expanded', String(isOpen));
+  if (isOpen) aliInput.focus();
+}
+
+function addAliMessage(text, type) {
+  const message = document.createElement('div');
+  message.className = `ali-message ali-message--${type}`;
+  message.textContent = text;
+  aliMessages.appendChild(message);
+  aliMessages.scrollTop = aliMessages.scrollHeight;
+}
+
+function askAli(text) {
+  const message = text.trim();
+  if (!message) return;
+  addAliMessage(message, 'user');
+  aliInput.value = '';
+  const normalized = message.toLowerCase();
+  const match = aliReplies.find(item => item.terms.some(term => normalized.includes(term)));
+  window.setTimeout(() => addAliMessage(match?.answer || 'I can help with services, destinations, budgets and booking questions. For a personalised answer, share your origin, destination and travel dates, or continue with our travel expert on WhatsApp.', 'bot'), 280);
+}
+
+if (aliChat) {
+  aliLauncher.addEventListener('click', () => toggleAli());
+  aliClose.addEventListener('click', () => toggleAli(false));
+  aliForm.addEventListener('submit', event => { event.preventDefault(); askAli(aliInput.value); });
+  aliChat.querySelectorAll('[data-ali-prompt]').forEach(button => button.addEventListener('click', () => askAli(button.dataset.aliPrompt)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') toggleAli(false); });
+}
